@@ -1,0 +1,294 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #DFCB2B;
+    font-size: 16px;
+    margin: 0;
+}
+
+.header{
+background:black;
+color: blanchedalmond;
+padding :2rem 1;
+font-family: 'Itim', cursive;
+font-size: 20px;
+position: fixed;
+left: 0;
+top:0;
+right:0;
+
+}
+
+.header a{
+    color: #DFCB2B;
+    text-decoration: none;
+}
+
+.logo{
+letter-spacing: 15px;
+font-size: 1.2em;
+}
+
+.logo-nav-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.navigation ul li {
+   display: inline-block;
+}
+.navigation ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 10px;
+ }
+
+ .navigation ul li a:hover {
+    background: white;  
+ }
+
+ .footer{
+     background: black;
+     color:#FFFFFF; 
+     padding: 2rem 0;
+     margin-top: 1rem;
+ }
+
+  nav.row{
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 18px;
+      text-transform: capitalize;
+  }
+ ul{
+     list-style: none;
+     margin: auto;
+     
+ }
+ 
+ 
+.main{
+    padding-top: 5rem;
+}
+
+.Buscador{
+   position: fixed;
+   top: 4%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+input.src{
+    
+    margin-top: 1rem;
+    padding: 9px 500px 10px 100px;
+    background: #DED5BA url("lupa.png") no-repeat 100px center;
+    outline: none;
+    font-size: 20px;
+    border-radius: 25px;
+    border: 3px solid #DED5BA;
+    transition: all .5s;   
+}
+
+
+input.src hover{
+   width:180px;
+   background-color: #DED5BA;
+   border-color: #DED5BA;
+}
+input.bot{
+font-size: 15px;
+font-family: 'Itim', cursive;
+padding: 9px 10px 10px 10px;
+width: 7%;
+position: fixed;
+margin-top: 1rem;
+left: 68%;
+background-color: burlywood;
+border-radius: 25px;
+border: 3px solid #DED5BA;
+margin-top: 7px;
+}
+
+select.combo{
+   font-size: 13px;
+   font-family: 'Itim', cursive;
+   padding: 9px 10px 10px 10px;
+   width: 7%;
+   position: fixed;
+   margin-top: 1rem;
+   left: 61%;
+   background-color: burlywood;
+   border-radius: 25px;
+   border: 3px solid #DED5BA;
+   margin-top: 7px;
+
+}
+
+.BusquedaAvanzada{
+    font-family:sans-serif;
+    color: black;
+    bottom:20%;
+    position: fixed;
+    width:200px;
+    background-color: burlywood;
+    padding: 30px;
+    margin: auto;
+    margin-top: 200px;
+    border-radius: 15px;
+    
+ }
+ 
+ .buscAv{
+     
+     margin-left: -10px;
+     background: #DED5BA no-repeat 100px center;
+     outline: none;
+     font-size: 20px;
+     border-radius: 25px;
+     border: 3px solid #DED5BA;
+     margin-bottom: 40px;
+ 
+ }
+ 
+ .comboAv{
+    bottom:52%;
+    width: 10%;
+    position: fixed;
+    background-color:  3px solid #DED5BA;
+    border-radius: 25px;
+    border: 3px solid #DED5BA;
+    font-family: 'Itim', cursive;
+    font-size: 13px;
+    left: 50px;
+ 
+ }
+ 
+ .botAv{
+     width: 10%;
+     position: fixed;
+     left: 3.5%;
+     bottom: 15%;
+     background-color:#DFCB2B;
+     border-radius: 25px;
+     border: 3px solid #FFFFFF;
+     font-family: 'Itim', cursive;
+     font-size: 15px;
+ 
+     }
+ 
+ input.filt{
+    color: #DFCB2B;
+    font-size: 16px; 
+    padding: 2px;
+    margin: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+ }
+
+ 
+h1{
+    color: black;
+    text-align:center;
+    font-family: 'Truculenta', sans-serif;    
+    font-size: 50px;
+}
+
+.form-register{
+    width: 95%;
+    max-width: 700px;
+    margin: auto;
+    background: #DFCB2B;
+    border-radius: 10px;
+}
+.form_titulo{
+    font-family: 'Truculenta', sans-serif;    
+    background: #DED5BA;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 30px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom: 5px solid black;
+}
+
+.contenedor-inputs{
+padding:  10px 30px;
+display:  flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.input-cont{
+    padding:  10px 62px;
+    margin-right: 60px;
+}
+.input-foto{
+    width: 40%;
+    margin-top: -40%;
+    margin-left: 60%;
+}
+.fotoperfil{
+    width: 40%;
+    margin-top: -40%;
+    margin-left: 60%;
+}
+
+.input-foto-text{
+    color: black;
+    width: 50%;
+    margin-top: -43%;
+    margin-left: 60%;
+    font-family: 'Truculenta', sans-serif;    
+
+
+}
+
+input{
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid black;
+    font-family: 'Truculenta', sans-serif;    
+
+}
+
+.input-48{
+    color: black;
+    width: 48%;
+    font-family: 'Truculenta', sans-serif;    
+
+}
+.input-100{
+    width: 100%;
+}
+
+.form_link{
+color: black;
+width: 100%;
+margin: 7px;
+text-align: center;
+font-size: 10px 40px;
+font-family: 'Truculenta', sans-serif;    
+
+}
+
+.Boton_enviar{
+border-radius: 15px;
+color: #C15110;
+background: black;
+width: 100%;
+padding: 10px 100px;
+margin:10px;
+font-family: 'Itim', cursive;
+font-size: 25px;
+}
