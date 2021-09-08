@@ -122,7 +122,6 @@ body{
  .container{
      display:flex;
     justify-content: space-between;
-    align-items: left;
  }
  
  .nav_footer{
@@ -140,7 +139,7 @@ body{
      font-family: 'Truculenta', sans-serif; 
      font-size: 15px;
     line-height: 30px;
-    text-align: left;
     color:black;
+    
  }
  
