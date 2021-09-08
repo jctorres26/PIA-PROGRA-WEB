@@ -46,15 +46,15 @@ body{
 }
 
 .main{
-    padding-top: .1rem;
+    padding-top: .1rem
 }
 
 .login_usuario{
     width: 500px;
     background: #FFE1AE;
-    padding: 50px;
+    padding: 35px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 20px;
     border-radius: 20px;
     color: black;
     font-family: 'Truculenta', sans-serif;    
@@ -105,3 +105,42 @@ body{
     font-size: 30px;
     border-radius: 25px;
 }
+
+.footer{
+   height:90px;
+  line-height:20px;
+  background:#FFAEBC;
+  color:white;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  
+  
+ }
+ 
+ .container{
+     display:flex;
+    justify-content: space-between;
+    align-items: left;
+ }
+ 
+ .nav_footer{
+     display: flex;
+ }
+ 
+ .nav_barra_f{
+     display: flex;
+    list-style: none;
+    align-items: center;
+    margin-left: 650px;
+ }
+ 
+ .nav_barra_item_f{
+     font-family: 'Truculenta', sans-serif; 
+     font-size: 15px;
+    line-height: 30px;
+    text-align: left;
+    color:black;
+ }
+ 
