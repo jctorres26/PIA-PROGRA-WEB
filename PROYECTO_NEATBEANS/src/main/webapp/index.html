@@ -4,6 +4,8 @@
         <title>LOGIN</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="login.css">
+        <script src="validar_login.js"></script>
+    
     </head>
     <body style="background-color: #A0E7E5;">
         <header class="header">
@@ -18,18 +20,22 @@
             <section class="login_usuario">
                 <h3>Iniciar sesion en NoteBank</h3>
                 <h4>¡Bienvenido!</h4>
-                <input class="controls" type="text" name="usuario" id="usuario_login" placeholder="Nombre de usuario"><!-- comment -->
+                <form class="form-login" action="" method="post" onsubmit="return validar();">
+                <input class="controls" type="text" name="usuario" id="usuario_login" placeholder="Nombre de usuario" ><!-- comment -->
                 <br>
                 <br>
-                <input class="controls" type="text" name="contraseña" id="contraseña_login" placeholder="Contraseña">
+                <input class="controls" type="password" name="contraseña" id="contraseña_login" placeholder="Contraseña" >
                  <br>
                 <br>
                 <input class="boton" type="submit" value="Ingresar">
+                </form>
                 <p>
                     ¿No estas registrado aun?
                     <a href="#" class="link_registrarse"> Registrate aqui </a>
                 </p>
             </section>
+            
+            
         </main>
         <footer class="footer">
             <div class="container">
