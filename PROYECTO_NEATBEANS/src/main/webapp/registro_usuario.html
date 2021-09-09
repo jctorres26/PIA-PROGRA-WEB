@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="registro_usuario.css">
+    <script src="validar_registro.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Truculenta:wght@400;500&display=swap" rel="stylesheet">
@@ -28,7 +29,7 @@
 
         <main class="main">
 
-<form name = "form1" action="registrar.php" method="post" class="form-register" >
+<form name = "form1" action="" method="post" class="form-register" onsubmit="return validar();" >
 <h2 class="form_titulo"> Crea tu cuenta</h2>
 <div class="contenedor-inputs">
 <input type="text" id="Nombre" name="Nombre" placeholder="Nombre(s)" class="input-48" required>
@@ -149,39 +150,7 @@ if( contraTxt!=confContraTxt){
 
 });
 
-      function validar(){
-           
-        var letters = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/g;
-        var spaces = /^\S*$/;
-          var nombreTxt = document.getElementById('Nombre').value; 
-          var apellidoTxt = document.getElementById('Apellido').value;
-          var usuarioTxt = document.getElementById('Usuario').value;
-           var contraTxt = $("#contra").val();
-          var confContraTxt = $("#confContra").val();
-          
-          if(!(nombreTxt.match(letters))){
-              return false;
-          }
-        
-          else if(!(apellidoTxt.match(letters))){
-              return false;
-          }
-
-         else if(!(usuarioTxt.match(spaces))){
-              return false;
-          }
-          else if( $("#contra").val().length<8){
-            return false;
-
-          }
-          else if(contraTxt!=confContraTxt){
-              return false;
-          }
-
-    
-
-      }
-
+      
 
       
 
