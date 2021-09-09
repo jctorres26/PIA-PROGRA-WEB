@@ -242,7 +242,7 @@ border: 0;
 }
 
 .errores{
-   
+    font-family: 'Truculenta',sans-serif;
 -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
    -o-box-shadow: 0 0 10px rgba(0,0,0,0.3);
