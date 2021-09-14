@@ -2,17 +2,18 @@ function validar(){
            
         var letters = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/g;
         var spaces = /^\S*$/;
+        var spacesName = /\s\s/;
           var nombreTxt = document.getElementById('Nombre').value; 
           var apellidoTxt = document.getElementById('Apellido').value;
           var usuarioTxt = document.getElementById('Usuario').value;
            var contraTxt = $("#contra").val();
           var confContraTxt = $("#confContra").val();
           
-          if(!(nombreTxt.match(letters))){
+          if(!(nombreTxt.match(letters)) || (apellidoTxt.match(spacesName)) ){
               return false;
           }
         
-          else if(!(apellidoTxt.match(letters))){
+          else if(!(apellidoTxt.match(letters)) || (apellidoTxt.match(spacesName))){
               return false;
           }
 

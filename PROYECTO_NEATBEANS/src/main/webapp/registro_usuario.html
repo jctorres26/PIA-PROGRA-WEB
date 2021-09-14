@@ -103,21 +103,22 @@ $('#FotoUsuario').change(function(){
           $("#enviar").click(function () {
 
             var letters = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/g;
-        var spaces = /^\S*$/;
+       var spaces = /^\S*$/;
+        var spacesName = /\s\s/;
           var nombreTxt = document.getElementById('Nombre').value; 
           var apellidoTxt = document.getElementById('Apellido').value;
           var usuarioTxt = document.getElementById('Usuario').value;
            var contraTxt = $("#contra").val();
           var confContraTxt = $("#confContra").val();
 
-if(!(nombreTxt.match(letters)) || !(nombreTxt.match(spaces))){
+if(!(nombreTxt.match(letters)) || (nombreTxt.match(spacesName))){
 
 $("#mensaje1").fadeIn();
 }else{
 $("#mensaje1").fadeOut();}
 
 
-if(!(apellidoTxt.match(letters)) ||!(apellidoTxt.match(spaces)) ){
+if(!(apellidoTxt.match(letters)) || (apellidoTxt.match(spacesName)) ){
   $("#mensaje2").css("margin-top",75);
   $("#mensaje2").fadeIn();
 }else{
