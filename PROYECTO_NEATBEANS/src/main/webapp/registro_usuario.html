@@ -32,24 +32,24 @@
 <form name = "form1" action="" method="post" class="form-register" onsubmit="return validar();" >
 <h2 class="form_titulo"> Crea tu cuenta</h2>
 <div class="contenedor-inputs">
-<input type="text" id="Nombre" name="Nombre" placeholder="Nombre(s)" class="input-48" required>
+<input type="text" id="Nombre" name="Nombre" placeholder="Nombre(s)" class="input-48" >
 <div id="mensaje1" class="errores">Formato de nombre incorrecto</div>
 
-<input type="text" id = "Apellido" name="Apellido" placeholder="Apellido(s)" class="input-48" required>
+<input type="text" id = "Apellido" name="Apellido" placeholder="Apellido(s)" class="input-48" >
 <div id="mensaje2" class="errores" >Formato de apellido incorrecto</div>
 
 <p class="input-48">Fecha de Nacimiento</p>
-<input type="date" id="fecha_naciemiento" name="fechadenaciemiento" class="input-48" required>
+<input type="date" id="fecha_naciemiento" name="fechadenaciemiento" class="input-48" >
 <p class="input-foto-text">Foto de Perfil</p>
 <img alt= "FotoUsuario" id="FotografiadePerfil" class="fotoperfil"> 
-<input id="FotoUsuario" type="file" name="Fotografia" placeholder="Foto de Perfil" class="input-foto" required>
-<input type="email" name="Correo" placeholder="Correo" class="input-100" required>
+<input id="FotoUsuario" type="file" name="Fotografia" placeholder="Foto de perfil" class="input-foto" >
+<input type="email" name="Correo" placeholder="Correo" class="input-100" >
 
-<input type="text" id="Usuario" name="Usuario" placeholder="Usuario" class="input-48" required>
+<input type="text" id="Usuario" name="Usuario" placeholder="Usuario" class="input-48" >
 <div id="mensaje3" class="errores" >Formato de usuario incorrecto</div>
 
-<input type="password" id="contra" name="Contraseña" placeholder="Contraseña" class="input-cont" required>
-<input type="password" id="confContra" name="Conf-Contraseña" placeholder="Confirmar Contraseña" class="input-cont" required>
+<input type="password" id="contra" name="Contraseña" placeholder="Contraseña" class="input-cont" >
+<input type="password" id="confContra" name="Conf-Contraseña" placeholder="Confirmar Contraseña" class="input-cont" >
 <div id="mensaje4" class="errores" >Formato de contraseña incorrecto</div>
 <div id="mensaje5" class="errores" >Contraseña no coincide</div>
 
@@ -110,21 +110,21 @@ $('#FotoUsuario').change(function(){
            var contraTxt = $("#contra").val();
           var confContraTxt = $("#confContra").val();
 
-if(!(nombreTxt.match(letters))){
+if(!(nombreTxt.match(letters)) || !(nombreTxt.match(spaces))){
 
 $("#mensaje1").fadeIn();
 }else{
 $("#mensaje1").fadeOut();}
 
 
-if(!(apellidoTxt.match(letters))){
+if(!(apellidoTxt.match(letters)) ||!(apellidoTxt.match(spaces)) ){
   $("#mensaje2").css("margin-top",75);
   $("#mensaje2").fadeIn();
 }else{
   $("#mensaje2").fadeOut();
 }
 
-if(!(usuarioTxt.match(spaces))){
+if(!(usuarioTxt.match(spaces)) || usuarioTxt === ""){
     $("#mensaje3").css("margin-top",340);
   $("#mensaje3").fadeIn();
 }else{
