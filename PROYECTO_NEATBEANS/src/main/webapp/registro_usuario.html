@@ -39,11 +39,14 @@
 <div id="mensaje2" class="errores" >Formato de apellido incorrecto</div>
 
 <p class="input-48">Fecha de Nacimiento</p>
-<input type="date" id="fecha_naciemiento" name="fechadenaciemiento" class="input-48" >
+<input type="date" id="fecha_nacimiento" min='1900-01-01' max = '2000-01-01' name="fechadenaciemiento" class="input-48" >
+
 <p class="input-foto-text">Foto de Perfil</p>
 <img alt= "FotoUsuario" id="FotografiadePerfil" class="fotoperfil"> 
-<input id="FotoUsuario" type="file" name="Fotografia" placeholder="Foto de perfil" class="input-foto" >
-<input type="email" name="Correo" placeholder="Correo" class="input-100" >
+<input id="FotoUsuario" type="file"  name="Fotografia" placeholder="Foto de perfil" class="input-foto" required>
+
+<input type="email" id = "Email" name="Correo" placeholder="Correo" class="input-100" >
+<div id="mensaje6" class="errores" >Formato de correo incorrecto</div>
 
 <input type="text" id="Usuario" name="Usuario" placeholder="Usuario" class="input-48" >
 <div id="mensaje3" class="errores" >Formato de usuario incorrecto</div>
@@ -97,6 +100,23 @@ $('#FotoUsuario').change(function(){
 });
 });
 
+window.onload = function validacionDTP(){
+  var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; 
+var yyyy = today.getFullYear();
+
+if (dd < 10) {
+   dd = '0' + dd;
+}
+
+if (mm < 10) {
+   mm = '0' + mm;
+} 
+    
+today = yyyy + '-' + mm + '-' + dd;
+document.getElementById("fecha_nacimiento").setAttribute("max", today);
+}
         
 
          
@@ -105,11 +125,14 @@ $('#FotoUsuario').change(function(){
             var letters = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/g;
        var spaces = /^\S*$/;
         var spacesName = /\s\s/;
+        var email = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
           var nombreTxt = document.getElementById('Nombre').value; 
           var apellidoTxt = document.getElementById('Apellido').value;
           var usuarioTxt = document.getElementById('Usuario').value;
            var contraTxt = $("#contra").val();
           var confContraTxt = $("#confContra").val();
+          var emailTxt = document.getElementById('Email').value;
 
 if(!(nombreTxt.match(letters)) || (nombreTxt.match(spacesName))){
 
@@ -144,6 +167,13 @@ if( contraTxt!=confContraTxt){
   $("#mensaje5").fadeIn();
 }else{
   $("#mensaje5").fadeOut();
+}
+
+if( !(emailTxt.match(email))){
+    $("#mensaje6").css("margin-top",272);
+  $("#mensaje6").fadeIn();
+}else{
+  $("#mensaje6").fadeOut();
 }
 
 
