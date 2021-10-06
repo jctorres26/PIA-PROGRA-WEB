@@ -23,7 +23,7 @@
 <body style = "background-color: #A0E7E5;">
     <header class="header">
         <div class="container logo-nav-container"> 
-        <img src="LOGO.png" width="250" height="85" class = "logo"/>
+        <img src="assets/imagenes/LOGO.png" width="250" height="85" class = "logo"/>
         <nav class = "navigation">
         <ul> 
         <li><a href="index.jsp"> LOGIN </a></li>
@@ -75,7 +75,7 @@
             <nav class="row">
                 <!-- LOGO -->
                 <a href="#" class="logotipo">
-                    <img src="LOGO.png" width="250" height="90" alt ="Logo marca" class="img-logo mr-2">
+                    <img src="assets/imagenes/LOGO.png" width="250" height="90" alt ="Logo marca" class="img-logo mr-2">
                 </a>
                  <!-- MENU1 --> 
                  <ul class="Info">

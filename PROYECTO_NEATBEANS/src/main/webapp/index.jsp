@@ -25,7 +25,7 @@
     <body style="background-color: #A0E7E5;">
         <header class="header">
             <nav class="nav">
-                <img src="LOGO.png" width="250" height="90" >
+                <img src="assets/imagenes/LOGO.png" width="250" height="90" >
                 <ul class="nav_barra">
                     <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> Sign up </a> </li>
                 </ul>
@@ -61,7 +61,7 @@
         <footer class="footer">
             <div class="container">
                 <nav class="nav_footer">
-                    <img src="LOGO.png" width="250" height="90" >
+                    <img src="assets/imagenes/LOGO.png" width="250" height="90" >
                     <ul class="nav_barra_f">
                         <li class="nav_barra_item_f"> Contactanos: Notebank@gmail.com  Telefono: 8120052167</li>
                         
