@@ -1,0 +1,117 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29/09/2021, 03:32:32 PM
+    Author     : ALEXANDRA
+*/
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: impact;
+    padding: 90px 20px 0;
+}
+
+.header{
+    background-color: #FFAEBC;
+    height: 90px;
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_barra_link{
+    -webkit-text-stroke: 1px white;
+    
+    color: black;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+.nav_barra{
+    display: flex;
+    margin-right: 25px;
+    list-style: none;
+    
+}
+.nav_barra_item{
+    font-size: 30px;
+    margin: 0 10px;
+    line-height: 90px;
+    text-transform: uppercase;
+}
+.nav_barra_link:hover{
+    background-color: #FBE7C6;
+}
+
+.footer{
+   height:90px;
+  line-height:20px;
+  background:#FFAEBC;
+  color:white;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  
+  
+ }
+ 
+ .container{
+     display:flex;
+    justify-content: space-between;
+ }
+ 
+ .nav_footer{
+     display: flex;
+ }
+ 
+ .nav_barra_f{
+     display: flex;
+    list-style: none;
+    align-items: center;
+    margin-left: 650px;
+ }
+ 
+ .nav_barra_item_f{
+     font-family: 'Truculenta', sans-serif; 
+     font-size: 15px;
+    line-height: 30px;
+    color:black;
+    
+ }
+ 
+
+
+ 
+ .Busqueda_avanzada{
+   
+    font-family: 'Truculenta', sans-serif;
+    text-align: center;
+    color: black;
+    bottom:20%;
+    position: fixed;
+    width:300px;
+    background-color: #FFE1AE;
+    padding: 30px;
+    margin: auto;
+    margin-top: 200px;
+    border-radius: 15px;
+   
+ }
+ 
+
+ 
+ 
