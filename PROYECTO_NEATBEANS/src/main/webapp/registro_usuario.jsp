@@ -1,6 +1,13 @@
+<%-- 
+    Document   : registro_usuario
+    Created on : 4/10/2021, 09:23:31 PM
+    Author     : jctor
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +26,7 @@
         <img src="LOGO.png" width="250" height="85" class = "logo"/>
         <nav class = "navigation">
         <ul> 
-        <li><a href="index.html"> LOGIN </a></li>
+        <li><a href="index.jsp"> LOGIN </a></li>
         </ul>
         </nav>
         </div>
@@ -57,7 +64,7 @@
 <div id="mensaje5" class="errores" >Contraseña no coincide</div>
 
 <input type="submit"id="enviar" value="Crear cuenta" class="Boton_enviar" onclick=" return validar()" >
-<p class="form_link">¿Ya tienes una cuenta?<a href="index.html"> Ingresa aquí</a></p>
+<p class="form_link">¿Ya tienes una cuenta?<a href="index.jsp"> Ingresa aquí</a></p>
 
 </div>
 </form>
@@ -189,4 +196,6 @@ if( !(emailTxt.match(email))){
 
         </script>
 </body>
+    
+    
 </html>

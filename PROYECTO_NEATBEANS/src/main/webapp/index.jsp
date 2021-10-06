@@ -1,6 +1,14 @@
+<%-- 
+    Document   : index
+    Created on : 4/10/2021, 06:47:38 PM
+    Author     : jctor
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+  
+      <head>
         <title>LOGIN</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="login.css">
@@ -19,7 +27,7 @@
             <nav class="nav">
                 <img src="LOGO.png" width="250" height="90" >
                 <ul class="nav_barra">
-                    <li class="nav_barra_item"> <a href="registro_usuario.html" class="nav_barra_link"> Sign up </a> </li>
+                    <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> Sign up </a> </li>
                 </ul>
             </nav>
         </header>
@@ -27,7 +35,7 @@
             <section class="login_usuario">
                 <h3>Iniciar sesion en NoteBank</h3>
                 <h4>¡Bienvenido!</h4>
-                <form class="form-login" action="" method="post" onsubmit="return validar();" >
+                <form class="form-login" action="LogInController" method="POST" onsubmit="return validar();" >
                 <input class="controls" type="text" name="usuario_login" id="usuario_login" placeholder="Nombre de usuario" ><!-- comment -->
                 <div id="mensajeusuarioFALTA" class="errores">Favor de ingresar usuario</div>
                 <div id="mensajeusuarioLONGITUD" class="errores">Se necesita min 3 y max 20 caractes</div>
@@ -35,7 +43,7 @@
                 
                 <br>
                 <br>
-                <input class="controls" type="password" name="contraseña_login" id="contraseña_login" placeholder="Contraseña" >
+                <input class="controls" type="password" name="contrasenia_login" id="contraseña_login" placeholder="Contraseña" >
                  <div id="mensajecontraseñaFALTA" class="errores">Favor de ingresar contraseña</div>
                   <div id="mensajecontraseñaLONGITUD" class="errores">La contraseña debe de tener 8 caracteres</div>
                    <div id="mensajecontraseñaTIPO" class="errores">Caracteres no validos</div>
@@ -44,7 +52,7 @@
                 </form>
                 <p>
                     ¿No estas registrado aun?
-                    <a href="registro_usuario.html" class="link_registrarse"> Registrate aqui </a>
+                    <a href="registro_usuario.jsp" class="link_registrarse"> Registrate aqui </a>
                 </p>
             </section>
             
@@ -122,4 +130,5 @@
         </script>
         
     </body>
+    
 </html>
