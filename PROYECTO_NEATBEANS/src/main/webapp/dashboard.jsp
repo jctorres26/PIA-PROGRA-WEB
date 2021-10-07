@@ -24,13 +24,31 @@
         <header class="header">
             <nav class="nav">
                 <img src="assets/imagenes/LOGO.png" width="250" height="90" >
+                <!-- BUSCADOR -->
                 
+                 
                 <ul class="nav_barra">
-                    <li class="nav_barra_item"> <a href="dashboard.jsp" class="nav_barra_link"> DASHBOARD </a> </li>
-                    <li class="nav_barra_item"> <a href="busqueda_avanzada.jsp" class="nav_barra_link"> Busqueda Avanzada </a> </li>
+                    <!--  <li class="nav_barra_item"> <a href="dashboard.jsp" class="nav_barra_link"> DASHBOARD </a> </li> -->
+                    
+                    <form  action="busqueda_avanzada.jsp" method="POST" ;" >
+                        <li class="nav_barra_item"> 
+                            <input type="text" name="search" placeholder= "Busca tu nota" class="Barra_busqueda" autocomplete="off">
+                        <input class="btn_buscar" id="btnenviar" type="submit" value="Buscar">
+                        </li>
+                        
+                    </form>
+                    
+                    <li class="nav_barra_item"> <a href="dashboard.jsp" class="nav_barra_link"> DASHBOARD </a> 
+                        <ul class="subbarra">
+                            <li class="subnivel"> <a href="crear_nota.jsp" > CREAR NOTA </a> </li>
+                            <li class="subnivel"> <a href="busqueda_avanzada.jsp" > BUSQUEDA AV. </a> </li>
+
+                        </ul>
+                    </li>
+                    
                     <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> <img src="assets/imagenes/foto.png" width="100" height="90" align="left">Perfil de usuario </a> </li>
                     <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> LOG OUT </a> </li>
-
+                   
                 </ul>
                 
             </nav>

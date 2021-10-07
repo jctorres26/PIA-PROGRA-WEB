@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 *{
     margin: 0;
     box-sizing: border-box;
@@ -6,10 +8,8 @@
 body{
     font-family: impact;
     padding: 90px 20px 0;
+  
 }
-
-
-
 .header{
     background-color: #FFAEBC;
     height: 90px;
@@ -110,7 +110,8 @@ body{
       font-family: 'Truculenta', sans-serif;
  }
 
-.footer{
+ 
+ .footer{
    height:90px;
   line-height:20px;
   background:#FFAEBC;
@@ -119,15 +120,8 @@ body{
   bottom:0;
   left:0;
   width:100%;
-  margin-top: 1rem;
   
  }
- 
- .container{
-     display:flex;
-    justify-content: space-between;
- }
- 
  .nav_footer{
      display: flex;
  }
@@ -147,22 +141,97 @@ body{
     
  }
  
- .form-register{
-    width: 95%;
-    max-width: 1000px;
-    margin: auto;
+ 
+ .creacion_nota{
+    width: 1000px;
     background: #FFE1AE;
-    border-radius: 10px;
-    margin-top: 30px;
+    padding: 35px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    color: black;
+    font-family: 'Truculenta', sans-serif;  
+}
+
+.creacion_nota h3{
+    font-size: 25px;
+    
+    margin-bottom: 15px;
+    -webkit-text-stroke: 1px white;
+    font-family: impact;
+    text-align: center; 
+    display: flex;
+  justify-content: center;
+}
+
+.controls{
+    width: 100%;
+    background-color: #FFEBC9;
+    padding: 50px;
+    border:none;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    font-family: 'Truculenta', sans-serif;  
+    font-size: 18px;
+}
+
+.boton{
+    font-family: 'Truculenta', sans-serif; 
+    width: 100%;
+    background-color: #B4F8C8;
+    border: none;
+    padding:5px;
+    color: black;
+    margin-top:10px;
+    font-size: 20px;
+    border-radius: 25px;
    
 }
 
-.form-register h2{
-    margin-top: 5px;
-font-size: 30px;
-    margin-bottom: 20px;
-    -webkit-text-stroke: 1px white;
-    font-family: impact;
-    text-align: center;
+.tag-container{
+    border:2px solid #FFEBC9;
+    padding:5px;
+    border-radius:5px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    background-color: #FFEBC9; 
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    cursor: default;
+    overflow-x: scroll;
+}
+
+.tag-container .tag{
+    padding: 5px;
+    border: 1px solid #FFD68F;
+    margin: 5px;
+    display:flex;
+    align-items: center;
+    border-radius: 3px;
+    background: #FFD68F
+        
+}
+
+.tag i{
+    font-size: 16px;
+    margin-left: 3px;
+    
+}
+
+.tag-container input{
+    flex:1;
+    font-size: 16px;
+    padding: 5px;
+    outline:none;
+    border:0;
+    background-color: #FFEBC9; 
+}
+
+
+ .creacion_nota h4{
+    font-size: 20px;
+    margin-bottom: 5px;
+    text-align: center;  
 }
  
