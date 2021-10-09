@@ -7,15 +7,16 @@ and open the template in the editor.
     Created on : 29/09/2021, 03:32:32 PM
     Author     : ALEXANDRA
 */
-
 *{
     margin: 0;
     box-sizing: border-box;
     
 }
+
 body{
     font-family: impact;
-    padding: 90px 20px 0;
+   height: 100%;
+   margin: 0;
 }
 
 .header{
@@ -25,6 +26,7 @@ body{
     width: 100%;
     top:0;
     left:0;
+    right:0;
 }
 
 .nav{
@@ -117,7 +119,7 @@ body{
      font-weight: bold;
       font-family: 'Truculenta', sans-serif;
  }
-
+/* 
 .footer{
    height:90px;
   line-height:20px;
@@ -155,7 +157,30 @@ body{
     
  }
  
+*/
 
+.footer{
+     background:#FFAEBC;
+     color:black; 
+     padding: 2.2rem 0;
+     margin-top: 26rem;
+     font-family: 'Truculenta', sans-serif; 
+      width:100%;
+ }
+
+  nav.row{
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 18px;
+      text-transform: capitalize;
+  }
+  ul {
+    list-style: none;
+    margin: auto;
+}
+.main{
+    padding-top: 5rem;
+}
 
  
  .Busqueda_avanzada{

@@ -7,8 +7,8 @@
 }
 body{
     font-family: impact;
-    padding: 90px 20px 0;
-  
+     height: 100%;
+   margin: 0;
 }
 .header{
     background-color: #FFAEBC;
@@ -17,6 +17,8 @@ body{
     width: 100%;
     top:0;
     left:0;
+    right:0;
+    
 }
 
 .nav{
@@ -110,7 +112,7 @@ body{
       font-family: 'Truculenta', sans-serif;
  }
 
- 
+ /* 
  .footer{
    height:90px;
   line-height:20px;
@@ -140,14 +142,34 @@ body{
     color:black;
     
  }
- 
+ */
+ .footer{
+    background:#FFAEBC;
+     color:black; 
+     padding: 2.2rem 0;
+     margin-top: 1rem;
+     font-family: 'Truculenta', sans-serif; 
+      width:100%;
+ }
+
+  nav.row{
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 18px;
+      text-transform: capitalize;
+  }
+  ul {
+    list-style: none;
+    margin: auto;
+}
+
  
  .creacion_nota{
     width: 1000px;
     background: #FFE1AE;
-    padding: 35px;
+    padding: 27px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 100px;
     border-radius: 20px;
     color: black;
     font-family: 'Truculenta', sans-serif;  

@@ -68,7 +68,7 @@
         <main class="main">
             
         </main>
-        <!-- FOOTER -->
+        <!-- FOOTER 
          <footer class="footer">
             <div class="container">
                 <nav class="nav_footer">
@@ -80,9 +80,29 @@
                 </nav>
             </div>
         </footer>
-        
-        
-    <script >
+        -->
+        <footer class= "footer">
+            <div class= "container-footer">
+                <nav class="row">
+                    <!-- LOGO -->
+                    <a href="#" class="logotipo">
+                        <img src="assets/imagenes/LOGO.png" width="250" height="90" alt ="Logo marca" class="img-logo mr-2">
+                    </a>
+                    <!-- MENU1 --> 
+                    <ul class="Info">
+                        <li class="font-weight-bold text-uppercase">Contacto</li>
+                        
+                    </ul>
+                    <!-- MENU2 --> 
+                    <ul class="Catego">
+                        <li class="font-weight-bold text-uppercase">Contacto</li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+
+        <script >
         
     </script>
     </body>
