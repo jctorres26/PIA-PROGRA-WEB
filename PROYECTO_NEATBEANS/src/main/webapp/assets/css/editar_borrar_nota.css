@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+*{
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: impact;
+     height: 100%;
+   margin: 0;
+}
+.header{
+    background-color: #FFAEBC;
+    height: 90px;
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    right:0;
+    
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_barra_link{
+    -webkit-text-stroke: 1px white;
+    
+    color: black;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+.nav_barra{
+    display: flex;
+    margin-right: 1px;
+    list-style: none;
+    
+}
+.nav_barra_item{
+    font-size: 26px;
+    margin: 0 10px;
+    line-height: 90px;
+    text-transform: uppercase;
+}
+.nav_barra_link:hover{
+    background-color: #FBE7C6;
+}
+.subbarra{
+     list-style: none;
+    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+ }
+ 
+ .subbarra li a{
+     list-style: none;
+     background-color: #FFAEBC;
+     text-decoration: none;
+     display:block;
+     -webkit-text-stroke: 1px white;
+    color: black;
+     text-align: center;
+ }
+ 
+ .subbarra li a:hover{
+    background-color: #FBE7C6;
+}
+
+
+ .nav_barra li ul{
+    display:none;
+     position:absolute;
+ }
+
+ .nav_barra li:hover > ul{
+     display:block;
+ }
+
+.Barra_busqueda{
+     position: fixed;
+   top: 4%;
+   left: 31%;
+   transform: translate(-50%, -50%);
+    margin-top: 1rem;
+    padding: 8px 80px;
+    background-color: #FBE7C6;
+    outline: none;
+    font-size: 20px;
+    border-radius: 25px;
+    border: 3px solid #FBE7C6;
+    transition: all .5s;   
+     font-family: 'Truculenta', sans-serif;
+ }
+ 
+ .btn_buscar{
+     padding: 8px 10px;
+     width: 6%;
+     top: 1%;
+     position: fixed;
+     margin-top: 1rem;
+     left: 43.5%;
+     background-color: #FFE1AE;
+     border-radius: 25px;
+     border: 3px solid #FFE1AE;
+     font-size: 15px;
+     font-weight: bold;
+      font-family: 'Truculenta', sans-serif;
+ }
+ 
+ .creacion_nota{
+    width: 1000px;
+    background: #FFE1AE;
+    padding: 27px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 20px;
+    color: black;
+    font-family: 'Truculenta', sans-serif;  
+}
+
+.creacion_nota h3{
+    font-size: 25px;
+    
+    margin-bottom: 15px;
+    -webkit-text-stroke: 1px white;
+    font-family: impact;
+    text-align: center; 
+    display: flex;
+  justify-content: center;
+}
+
+.controls{
+    width: 100%;
+    background-color: #FFEBC9;
+    padding: 50px;
+    border:none;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    font-family: 'Truculenta', sans-serif;  
+    font-size: 18px;
+}
+
+.boton{
+    font-family: 'Truculenta', sans-serif; 
+    width: 100%;
+    background-color: #B4F8C8;
+    border: none;
+    padding:5px;
+    color: black;
+    margin-top:10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+    border-radius: 25px;
+   
+}
+.botones{
+    display:flex;
+    margin-bottom: 40px;
+}
+
+.tag-container{
+    border:2px solid #FFEBC9;
+    padding:5px;
+    border-radius:5px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    background-color: #FFEBC9; 
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    cursor: default;
+    overflow-x: scroll;
+}
+
+.tag-container .tag{
+    padding: 5px;
+    border: 1px solid #FFD68F;
+    margin: 5px;
+    display:flex;
+    align-items: center;
+    border-radius: 3px;
+    background: #FFD68F
+        
+}
+
+.tag i{
+    font-size: 16px;
+    margin-left: 3px;
+    
+}
+
+.tag-container input{
+    flex:1;
+    font-size: 16px;
+    padding: 5px;
+    outline:none;
+    border:0;
+    background-color: #FFEBC9; 
+}
+
+
+ .creacion_nota h4{
+    font-size: 20px;
+    margin-bottom: 5px;
+    text-align: center;  
+}
+ 
+.footer{
+    background:#FFAEBC;
+     color:black; 
+     padding: 2.2rem 0;
+     margin-top: 2rem;
+     font-family: 'Truculenta', sans-serif; 
+      width:100%;
+ }
+
+  nav.row{
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 18px;
+      text-transform: capitalize;
+  }
+  ul {
+    list-style: none;
+    margin: auto;
+}
+

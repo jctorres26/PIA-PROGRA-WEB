@@ -1,6 +1,6 @@
 <%-- 
-    Document   : crear_nota
-    Created on : 7/10/2021, 12:18:08 AM
+    Document   : editar_borrar_nota
+    Created on : 12/10/2021, 03:21:22 PM
     Author     : ALEXANDRA
 --%>
 
@@ -9,10 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="assets/css/crear_nota.css">
-        <script src="crear_nota.js"></script>
-        <title>Crear Nota</title>
-        
+        <link rel="stylesheet" href="assets/css/editar_borrar_nota.css">
+        <title>Notas</title>
         <link href="https://fonts.googleapis.com/css2?family=Truculenta:wght@400;500&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -27,8 +25,7 @@
                 <!-- BUSCADOR -->
 
                 <ul class="nav_barra">
-                    <!--  <li class="nav_barra_item"> <a href="dashboard.jsp" class="nav_barra_link"> DASHBOARD </a> </li> -->
-
+                 
                     <form  action="busqueda_avanzada.jsp" method="POST" ;" >
                         <li class="nav_barra_item"> 
                             <input type="text" name="search" placeholder= "Busca tu nota" class="Barra_busqueda" autocomplete="off">
@@ -52,28 +49,29 @@
 
             </nav>
         </header>
+        
         <!-- MAIN CLASS -->
         <main class="main">
             <section class="creacion_nota">
-                <h3>Crea tu nota de Notebank</h3>
-                <form  action="dashboard.jsp" method="POST" onsubmit="return validar();" > 
-                <!--<input class="controls" type="text" name="nota" id="nota" > -->
-                <textarea class="controls" rows = "1" cols = "10" name = "description" id="description">
+                <form  action="dashboard.jsp" method="POST"  > 
+                <textarea class="controls" rows = "1" cols = "10" name = "description">
                 </textarea>
                 <!-- CONTENEDOR DE TAGS -->
                 <h4>Etiquetas</h4>
                 <div class="tag-container">
-
                     <input/>
                 </div>
-
-                <input class="boton" id="btnenviar" type="submit" value="Crear nota">
-                 
+                <div class="botones">
+                <input class="boton" id="btnenviar" type="submit" value="Guardar">
+               
+                <input class="boton" id="btnenviar" type="button" value="Editar">
+                
+                <input class="boton" id="btnenviar" type="button" value="Borrar">
+                </div>
                  </form> 
             </section>
         </main>
-        
-         <footer class= "footer">
+        <footer class= "footer">
             <div class= "container-footer">
                 <nav class="row">
                     <!-- LOGO -->
@@ -148,5 +146,7 @@
 
             input.focus();
         </script>
+        
+        
     </body>
 </html>
