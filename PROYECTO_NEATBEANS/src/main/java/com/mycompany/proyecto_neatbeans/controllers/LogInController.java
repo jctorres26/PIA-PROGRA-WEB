@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controllers;
+package com.mycompany.proyecto_neatbeans.controllers;
 
-import DAO.UserDAO;
+import com.mycompany.proyecto_neatbeans.DAO.UserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import models.User;
+import com.mycompany.proyecto_neatbeans.models.User;
 
 /**
  *
@@ -63,7 +63,12 @@ public class LogInController extends HttpServlet {
         if(result!= null){
         HttpSession session = request.getSession();
         session.setAttribute("Username", result.getUsername());
-        request.getRequestDispatcher("registro_usuario.jsp").forward(request, response);
+        session.setAttribute("Nombre", result.getNombre());
+        session.setAttribute("Apellido", result.getApellido());
+        session.setAttribute("FechaNac", result.getFechaNac());
+        session.setAttribute("Correo", result.getCorreo());
+        session.setAttribute("ImagenPerfil", result.getImagenPerfil());
+        request.getRequestDispatcher("dashboard.jsp").forward(request, response);
         
         }else{
         response.sendRedirect("index.jsp");
