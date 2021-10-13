@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
+package com.mycompany.proyecto_neatbeans.DAO;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import models.User;
-import utils.DbConnection;
+import com.mycompany.proyecto_neatbeans.models.User;
+import com.mycompany.proyecto_neatbeans.utils.DbConnection;
 
 /**
  *
@@ -18,9 +18,30 @@ import utils.DbConnection;
  */
 public class UserDAO {
     
-    public static void insertUser() throws SQLException{
-    
+    public static int insertUser(User user) {
+    try{
         Connection con = DbConnection.getConnection();
+        String qry = "CALL sp_usuario('Insert',?,?,?,?,?,?,?);";
+        CallableStatement statement =  con.prepareCall(qry);
+        
+        statement.setString(1, user.getUsername());
+        statement.setString(2, user.getNombre());
+        statement.setString(3, user.getApellido());
+        statement.setString(4, user.getFechaNac());
+        statement.setString(5, user.getCorreo());
+        statement.setString(6, user.getImagenPerfil());
+        statement.setString(7, user.getPassword());
+        
+        return statement.executeUpdate();
+        
+        
+        
+    }
+     catch(SQLException e){
+        System.out.println(e.getMessage());
+        }
+    
+    return 0;
     }
     
     
@@ -37,7 +58,13 @@ public class UserDAO {
         
         while(resultSet.next()){
         String username = resultSet.getString("Nombre_Usuario");
-        return new User(username);
+        String nombre = resultSet.getString("Nombre");
+         String apellido = resultSet.getString("Apellido");
+          String fechaNac = resultSet.getString("Fecha_Nacimiento");
+           String correo = resultSet.getString("Correo");
+            String imgPerfil = resultSet.getString("Imagen_Perfil");
+            return new User(username, nombre, apellido, fechaNac, correo, imgPerfil);
+        
         }
         
        

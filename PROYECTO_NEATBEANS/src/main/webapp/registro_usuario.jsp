@@ -14,8 +14,8 @@
     <title>Registro_de_Usuario</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="registro_usuario.css">
-    <script src="validar_registro.js"></script>
+    <link rel="stylesheet" href="assets/css/registro_usuario.css">
+    <script src="assets/javascript/validar_registro.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Truculenta:wght@400;500&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
 
         <main class="main">
 
-<form name = "form1" action="" method="post" class="form-register" onsubmit="return validar();" >
+<form name = "form1" action="SignUpController" method="POST" class="form-register" enctype="multipart/form-data" onsubmit="return validar();" >
 <h2 class="form_titulo"> Crea tu cuenta</h2>
 <div class="contenedor-inputs">
 <input type="text" id="Nombre" name="Nombre" placeholder="Nombre(s)" class="input-48" >
@@ -46,7 +46,7 @@
 <div id="mensaje2" class="errores" >Formato de apellido incorrecto</div>
 
 <p class="input-48">Fecha de Nacimiento</p>
-<input type="date" id="fecha_nacimiento" min='1900-01-01' max = '2000-01-01' value='2000-01-01' name="fechadenaciemiento" class="input-48" >
+<input type="date" id="fecha_nacimiento" min='1900-01-01' max = '2000-01-01' value='2000-01-01' name="fechadenacimiento" class="input-48" >
 
 <p class="input-foto-text">Foto de Perfil</p>
 <img alt= "FotoUsuario" id="FotografiadePerfil" class="fotoperfil"> 
@@ -58,8 +58,8 @@
 <input type="text" id="Usuario" name="Usuario" placeholder="Usuario" class="input-48" >
 <div id="mensaje3" class="errores" >Formato de usuario incorrecto</div>
 
-<input type="password" id="contra" name="Contraseña" placeholder="Contraseña" class="input-cont" >
-<input type="password" id="confContra" name="Conf-Contraseña" placeholder="Confirmar Contraseña" class="input-cont" >
+<input type="password" id="contra" name="Contrasenia" placeholder="Contraseña" class="input-cont" >
+<input type="password" id="confContra" name="Conf-Contrasenia" placeholder="Confirmar Contraseña" class="input-cont" >
 <div id="mensaje4" class="errores" >Formato de contraseña incorrecto</div>
 <div id="mensaje5" class="errores" >Contraseña no coincide</div>
 

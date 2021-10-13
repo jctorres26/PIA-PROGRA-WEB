@@ -35,7 +35,7 @@
             <section class="login_usuario">
                 <h3>Iniciar sesion en NoteBank</h3>
                 <h4>¡Bienvenido!</h4>
-                <form class="form-login" action="dashboard.jsp" method="POST" onsubmit="return validar();" >
+                <form class="form-login" action="LogInController" method="POST" onsubmit="return validar();" >
                 <input class="controls" type="text" name="usuario_login" id="usuario_login" placeholder="Nombre de usuario" ><!-- comment -->
                 <div id="mensajeusuarioFALTA" class="errores">Favor de ingresar usuario</div>
                 <div id="mensajeusuarioLONGITUD" class="errores">Se necesita min 3 y max 20 caractes</div>

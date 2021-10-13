@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package models;
+package com.mycompany.proyecto_neatbeans.models;
 
 /**
  *
@@ -11,7 +11,13 @@ package models;
  */
 public class User {
     private String username;
+    private String nombre;
+    private String apellido;
+    private String fechaNac;
+    private String correo;
+    private String imagenPerfil;
     private String password;
+    
 
     public User() {
     }
@@ -21,10 +27,69 @@ public class User {
         this.password = password;
     }
 
-    public User(String username) {
+    
+    public User(String username, String nombre, String apellido, String fechaNac, String correo, String imagenPerfil, String password) {
         this.username = username;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNac = fechaNac;
+        this.correo = correo;
+        this.imagenPerfil = imagenPerfil;
+        this.password = password;
     }
 
+    public User(String username, String nombre, String apellido, String fechaNac, String correo, String imagenPerfil) {
+        this.username = username;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNac = fechaNac;
+        this.correo = correo;
+        this.imagenPerfil = imagenPerfil;
+    }
+    
+    
+    
+    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getFechaNac() {
+        return fechaNac;
+    }
+
+    public void setFechaNac(String fechaNac) {
+        this.fechaNac = fechaNac;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getImagenPerfil() {
+        return imagenPerfil;
+    }
+
+    public void setImagenPerfil(String imagenPerfil) {
+        this.imagenPerfil = imagenPerfil;
+    }
     
     
     public String getUsername() {
