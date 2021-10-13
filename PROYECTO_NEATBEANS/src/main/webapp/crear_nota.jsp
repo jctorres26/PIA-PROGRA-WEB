@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="assets/css/crear_nota.css">
-        <script src="crear_nota.js"></script>
+        <script src="assets/javascript/crear_nota.js"></script>
         <title>Crear Nota</title>
         
         <link href="https://fonts.googleapis.com/css2?family=Truculenta:wght@400;500&display=swap" rel="stylesheet">
@@ -18,6 +18,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link href= "https://fonts.googleaplis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet" />
+   
+        </script>
     </head>
     <body style="background-color: #A0E7E5;">
         <!-- BARRA NAVEGACION -->
@@ -56,7 +58,7 @@
         <main class="main">
             <section class="creacion_nota">
                 <h3>Crea tu nota de Notebank</h3>
-                <form  action="dashboard.jsp" method="POST" onsubmit="return validar();" > 
+                <form  name="formulario" action="dashboard.jsp" method="POST" onsubmit="return validar();" > 
                 <!--<input class="controls" type="text" name="nota" id="nota" > -->
                 <textarea class="controls" rows = "1" cols = "10" name = "description" id="description">
                 </textarea>
@@ -93,7 +95,9 @@
                 </nav>
             </div>
         </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
+        
             const tagContainer = document.querySelector('.tag-container');
             const input = document.querySelector('.tag-container input');
 

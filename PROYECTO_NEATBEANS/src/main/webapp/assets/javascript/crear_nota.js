@@ -1,11 +1,12 @@
-  function validar(){
-    var nota;
-    nota=document.getElementById("description").value;
+   function validar(){
+    var text;
+    text=document.getElementById("description").value;
     
-    if(nota ==="" ){
+   
+    if(text ==="" ){
         alert("Faltan campos para ingresar");
         return false;
     }
-   
+  
    
 }

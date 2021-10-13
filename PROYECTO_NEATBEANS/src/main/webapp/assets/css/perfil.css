@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 *{
     margin: 0;
@@ -10,6 +9,7 @@ body{
      height: 100%;
    margin: 0;
 }
+
 .header{
     background-color: #FFAEBC;
     height: 90px;
@@ -112,37 +112,6 @@ body{
       font-family: 'Truculenta', sans-serif;
  }
 
- /* 
- .footer{
-   height:90px;
-  line-height:20px;
-  background:#FFAEBC;
-  color:white;
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  
- }
- .nav_footer{
-     display: flex;
- }
- 
- .nav_barra_f{
-     display: flex;
-    list-style: none;
-    align-items: center;
-    margin-left: 650px;
- }
- 
- .nav_barra_item_f{
-     font-family: 'Truculenta', sans-serif; 
-     font-size: 15px;
-    line-height: 30px;
-    color:black;
-    
- }
- */
  .footer{
     background:#FFAEBC;
      color:black; 
@@ -150,6 +119,7 @@ body{
      margin-top: 1rem;
      font-family: 'Truculenta', sans-serif; 
       width:100%;
+      
  }
 
   nav.row{
@@ -162,98 +132,3 @@ body{
     list-style: none;
     margin: auto;
 }
-
- 
- .creacion_nota{
-    width: 1000px;
-    background: #FFE1AE;
-    padding: 27px;
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 20px;
-    color: black;
-    font-family: 'Truculenta', sans-serif;  
-}
-
-.creacion_nota h3{
-    font-size: 25px;
-    
-    margin-bottom: 15px;
-    -webkit-text-stroke: 1px white;
-    font-family: impact;
-    text-align: center; 
-    display: flex;
-  justify-content: center;
-}
-
-.controls{
-    width: 100%;
-    background-color: #FFEBC9;
-    padding: 50px;
-    border:none;
-    border-radius: 15px;
-    margin-bottom: 5px;
-    font-family: 'Truculenta', sans-serif;  
-    font-size: 18px;
-}
-
-.boton{
-    font-family: 'Truculenta', sans-serif; 
-    width: 100%;
-    background-color: #B4F8C8;
-    border: none;
-    padding:5px;
-    color: black;
-    margin-top:10px;
-    font-size: 20px;
-    border-radius: 25px;
-   
-}
-
-.tag-container{
-    border:2px solid #FFEBC9;
-    padding:5px;
-    border-radius:5px;
-    margin-top: 2px;
-    margin-bottom: 5px;
-    background-color: #FFEBC9; 
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    cursor: default;
-    overflow-x: scroll;
-}
-
-.tag-container .tag{
-    padding: 5px;
-    border: 1px solid #FFD68F;
-    margin: 5px;
-    display:flex;
-    align-items: center;
-    border-radius: 3px;
-    background: #FFD68F
-        
-}
-
-.tag i{
-    font-size: 16px;
-    margin-left: 3px;
-    
-}
-
-.tag-container input{
-    flex:1;
-    font-size: 16px;
-    padding: 5px;
-    outline:none;
-    border:0;
-    background-color: #FFEBC9; 
-}
-
-
- .creacion_nota h4{
-    font-size: 20px;
-    margin-bottom: 5px;
-    text-align: center;  
-}
- 
