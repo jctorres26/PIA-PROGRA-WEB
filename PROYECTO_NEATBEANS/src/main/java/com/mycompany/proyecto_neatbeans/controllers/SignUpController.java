@@ -63,7 +63,7 @@ public class SignUpController extends HttpServlet {
        String fullPath = path + FileUtils.RUTE_USER_IMAGE + "/" + nameImage;
        file.write(fullPath);
   
-      User user =  new User(usuario, nombre, apellido, fechaNac, correo, fullPath, contra);
+      User user =  new User(usuario, nombre, apellido, fechaNac, correo,  FileUtils.RUTE_USER_IMAGE + "/" + nameImage, contra);
       
       if(UserDAO.insertUser(user)==1){
       response.sendRedirect("index.jsp");

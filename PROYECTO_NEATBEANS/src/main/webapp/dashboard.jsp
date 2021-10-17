@@ -4,7 +4,19 @@
     Author     : jctor
 --%>
 
+<%@page import="com.mycompany.proyecto_neatbeans.DAO.NotaDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.mycompany.proyecto_neatbeans.models.Nota"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+ 
+ session = request.getSession();
+ 
+ List <Nota> notas =  NotaDAO.getNotasByUsuario((String)session.getAttribute("Username"));
+System.out.println(notas);
+ %>
+
+
 <!DOCTYPE html>
 <html>
       <head>
@@ -20,6 +32,7 @@
            
     </head>
     <body style="background-color: #A0E7E5;">
+          
         <!-- BARRA DE NAVEGACION -->
         <header class="header">
             <nav class="nav">
@@ -33,6 +46,7 @@
                     <form  action="busqueda_avanzada.jsp" method="POST" ;" >
                         <li class="nav_barra_item"> 
                             <input type="text" name="search" placeholder= "Busca tu nota" class="Barra_busqueda" autocomplete="off">
+                           
                         <input class="btn_buscar" id="btnenviar" type="submit" value="Buscar">
                         </li>
                         
@@ -46,7 +60,7 @@
                         </ul>
                     </li>
                     
-                    <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> <img src="assets/imagenes/foto.png" width="100" height="90" align="left">Perfil de usuario </a> </li>
+                    <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> <img src= "<%= session.getAttribute("ImagenPerfil") %>" width="100" height="90" align="left">Perfil de usuario </a> </li>
                     <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> LOG OUT </a> </li>
                    
                 </ul>

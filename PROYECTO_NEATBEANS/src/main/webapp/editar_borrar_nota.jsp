@@ -4,8 +4,20 @@
     Author     : ALEXANDRA
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="com.mycompany.proyecto_neatbeans.DAO.NotaDAO"%>
+<%@page import="com.mycompany.proyecto_neatbeans.models.Nota"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%
+ 
+ session = request.getSession();
+ 
+ Nota nota =  NotaDAO.getNotaById(8);
+System.out.println(nota);
+ %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -42,7 +54,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> <img src="assets/imagenes/foto.png" width="100" height="90" align="left">Perfil de usuario </a> </li>
+                    <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> <img src="<%= session.getAttribute("ImagenPerfil") %>" width="100" height="90" align="left">Perfil de usuario </a> </li>
                     <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> LOG OUT </a> </li>
 
                 </ul>
@@ -53,8 +65,8 @@
         <!-- MAIN CLASS -->
         <main class="main">
             <section class="creacion_nota">
-                <form  action="dashboard.jsp" method="POST"  > 
-                <textarea class="controls" rows = "1" cols = "10" name = "description">
+                <form  action="UpdateNoteController" method="POST"  > 
+                <textarea class="controls" rows = "1" cols = "10" name = "description" id="description">
                 </textarea>
                 <!-- CONTENEDOR DE TAGS -->
                 <h4>Etiquetas</h4>
@@ -62,11 +74,11 @@
                     <input/>
                 </div>
                 <div class="botones">
-                <input class="boton" id="btnenviar" type="submit" value="Guardar">
-               
-                <input class="boton" id="btnenviar" type="button" value="Editar">
+                    <input type="hidden" name ="id" value="<%= nota.getIdNota() %>">
+                    <input class="boton" id="btnenviar" type="submit" value="Guardar">
+              
                 
-                <input class="boton" id="btnenviar" type="button" value="Borrar">
+                    <a class="boton" id="btnenviar" type="button" href ="DeleteNoteController?id=<%= nota.getIdNota() %>" "index.jsp">Borrar</a>
                 </div>
                  </form> 
             </section>

@@ -6,6 +6,13 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%
+ 
+ session = request.getSession();
+
+ %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -47,7 +54,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> <img src="assets/imagenes/foto.png" width="100" height="90" align="left">Perfil de usuario </a> </li>
+                    <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> <img src="<%= session.getAttribute("ImagenPerfil") %>" width="100" height="90" align="left">Perfil de usuario </a> </li>
                     <li class="nav_barra_item"> <a href="registro_usuario.jsp" class="nav_barra_link"> LOG OUT </a> </li>
 
                 </ul>
@@ -58,15 +65,16 @@
         <main class="main">
             <section class="creacion_nota">
                 <h3>Crea tu nota de Notebank</h3>
-                <form  name="formulario" action="dashboard.jsp" method="POST" onsubmit="return validar();" > 
+                <form  name="formulario" action="InsertNoteController" method="POST" onsubmit="return validar();" > 
                 <!--<input class="controls" type="text" name="nota" id="nota" > -->
                 <textarea class="controls" rows = "1" cols = "10" name = "description" id="description">
                 </textarea>
+                <input type="hidden" name="usernameNota" value="<%=session.getAttribute("Username")  %>">
                 <!-- CONTENEDOR DE TAGS -->
                 <h4>Etiquetas</h4>
                 <div class="tag-container">
 
-                    <input/>
+                    <input type="text" name ="etiquetas" />
                 </div>
 
                 <input class="boton" id="btnenviar" type="submit" value="Crear nota">
