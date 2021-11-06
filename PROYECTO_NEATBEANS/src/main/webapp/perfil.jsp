@@ -65,8 +65,9 @@
                 <h3>  ¡Hola <%=session.getAttribute("Username")%> ! </h3>
                 <img class="img2" src="assets/imagenes/foto.png" width="150" height="140" >
                 <div id="divPLACEHOLDER">
-                    <p id="texto">Cambiar foto</p>
+                   
                 <input id="FotoUsuario" type="file"  name="Fotografia" placeholder="Foto de perfil" class="input-foto" required>
+              <p id="texto">   Cambiar foto</p>
                 </div>
                 
                 <!-- ENTRADA DE DATOS 

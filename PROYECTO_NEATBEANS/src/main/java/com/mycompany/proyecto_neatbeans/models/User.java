@@ -46,10 +46,6 @@ public class User {
         this.correo = correo;
         this.imagenPerfil = imagenPerfil;
     }
-    
-    
-    
-    
 
     public String getNombre() {
         return nombre;
@@ -58,6 +54,12 @@ public class User {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
+    
+    
+    
+
+  
 
     public String getApellido() {
         return apellido;

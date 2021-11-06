@@ -14,7 +14,7 @@
  
  session = request.getSession();
  
- Nota nota =  NotaDAO.getNotaById(8);
+ Nota nota =  NotaDAO.getNotaById(10);
 System.out.println(nota);
  %>
 

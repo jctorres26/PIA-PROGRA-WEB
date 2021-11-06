@@ -60,6 +60,8 @@ public class LogInController extends HttpServlet {
         String password = request.getParameter("contrasenia_login");
         User user =  new User(username, password);
         User result = UserDAO.logInUser(user);
+        
+        
         if(result!= null){
         HttpSession session = request.getSession();
         session.setAttribute("Username", result.getUsername());
