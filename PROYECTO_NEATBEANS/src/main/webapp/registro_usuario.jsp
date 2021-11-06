@@ -19,54 +19,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Truculenta:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body style = "background-color: #A0E7E5;">
-    <header class="header">
-        <div class="container logo-nav-container"> 
-        <img src="assets/imagenes/LOGO.png" width="250" height="85" class = "logo"/>
-        <nav class = "navigation">
-        <ul> 
-        <li><a href="index.jsp"> LOGIN </a></li>
-        </ul>
-        </nav>
-        </div>
+    </head>
+    <body style = "background-color: #A0E7E5;">
+        <header class="header">
+            <div class="container logo-nav-container"> 
+                <img src="assets/imagenes/LOGO.png" width="250" height="85" class = "logo"/>
+                <nav class = "navigation">
+                    <ul> 
+                        <li><a href="index.jsp"> LOGIN </a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
-    
-    
+
+
 
         <main class="main">
 
-<form name = "form1" action="SignUpController" method="POST" class="form-register" enctype="multipart/form-data" onsubmit="return validar();" >
-<h2 class="form_titulo"> Crea tu cuenta</h2>
-<div class="contenedor-inputs">
-<input type="text" id="Nombre" name="Nombre" placeholder="Nombre(s)" class="input-48" >
-<div id="mensaje1" class="errores">Formato de nombre incorrecto</div>
+            <form name = "form1" action="SignUpController" method="POST" class="form-register" enctype="multipart/form-data" onsubmit="return validar();" >
+                <h2 class="form_titulo"> Crea tu cuenta</h2>
+                <div class="contenedor-inputs">
+                    <input type="text" id="Nombre" name="Nombre" placeholder="Nombre(s)" class="input-48" >
+                    <div id="mensaje1" class="errores">Formato de nombre incorrecto</div>
 
-<input type="text" id = "Apellido" name="Apellido" placeholder="Apellido(s)" class="input-48" >
-<div id="mensaje2" class="errores" >Formato de apellido incorrecto</div>
+                    <input type="text" id = "Apellido" name="Apellido" placeholder="Apellido(s)" class="input-48" >
+                    <div id="mensaje2" class="errores" >Formato de apellido incorrecto</div>
 
-<p class="input-48">Fecha de Nacimiento</p>
-<input type="date" id="fecha_nacimiento" min='1900-01-01' max = '2000-01-01' value='2000-01-01' name="fechadenacimiento" class="input-48" >
+                    <p class="input-48">Fecha de Nacimiento</p>
+                    <input type="date" id="fecha_nacimiento" min='1900-01-01' max = '2000-01-01' value='2000-01-01' name="fechadenacimiento" class="input-48" >
 
-<p class="input-foto-text">Foto de Perfil</p>
-<img alt= "FotoUsuario" id="FotografiadePerfil" class="fotoperfil"> 
-<input id="FotoUsuario" type="file"  name="Fotografia" placeholder="Foto de perfil" class="input-foto" required>
+                    <p class="input-foto-text">Foto de Perfil</p>
+                    <img alt= "FotoUsuario" id="FotografiadePerfil" class="fotoperfil"> 
+                    <input id="FotoUsuario" type="file"  name="Fotografia" placeholder="Foto de perfil" class="input-foto" required>
 
-<input type="email" id = "Email" name="Correo" placeholder="Correo" class="input-100" >
-<div id="mensaje6" class="errores" >Formato de correo incorrecto</div>
+                    <input type="email" id = "Email" name="Correo" placeholder="Correo" class="input-100" >
+                    <div id="mensaje6" class="errores" >Formato de correo incorrecto</div>
 
-<input type="text" id="Usuario" name="Usuario" placeholder="Usuario" class="input-48" >
-<div id="mensaje3" class="errores" >Formato de usuario incorrecto</div>
+                    <input type="text" id="Usuario" name="Usuario" placeholder="Usuario" class="input-48" >
+                    <div id="mensaje3" class="errores" >Formato de usuario incorrecto</div>
 
-<input type="password" id="contra" name="Contrasenia" placeholder="Contraseña" class="input-cont" >
-<input type="password" id="confContra" name="Conf-Contrasenia" placeholder="Confirmar Contraseña" class="input-cont" >
-<div id="mensaje4" class="errores" >Formato de contraseña incorrecto</div>
-<div id="mensaje5" class="errores" >Contraseña no coincide</div>
+                    <input type="password" id="contra" name="Contrasenia" placeholder="Contraseña" class="input-cont" >
+                    <input type="password" id="confContra" name="Conf-Contrasenia" placeholder="Confirmar Contraseña" class="input-cont" >
+                    <div id="mensaje4" class="errores" >Formato de contraseña incorrecto</div>
+                    <div id="mensaje5" class="errores" >Contraseña no coincide</div>
 
-<input type="submit"id="enviar" value="Crear cuenta" class="Boton_enviar" onclick=" return validar()" >
-<p class="form_link">¿Ya tienes una cuenta?<a href="index.jsp"> Ingresa aquí</a></p>
+                    <input type="submit"id="enviar" value="Crear cuenta" class="Boton_enviar" onclick=" return validar()" >
+                    <p class="form_link">¿Ya tienes una cuenta?<a href="index.jsp"> Ingresa aquí</a></p>
 
-</div>
+                </div>
 </form>
         </main>
 

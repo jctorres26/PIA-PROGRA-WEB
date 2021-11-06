@@ -115,11 +115,9 @@ body{
  .footer{
     background:#FFAEBC;
      color:black; 
-     padding: 2.2rem 0;
-     margin-top: 1rem;
+     padding: 2rem 0;
+     margin-top: 5rem;
      font-family: 'Truculenta', sans-serif; 
-      width:100%;
-      
  }
 
   nav.row{
@@ -132,3 +130,154 @@ body{
     list-style: none;
     margin: auto;
 }
+
+
+.PERFIL{
+    width: 700px;
+    background: #FFE1AE;
+    padding: 27px;
+    margin: auto;
+    margin-top: 110px;
+    border-radius: 20px;
+    color: black;
+    font-family: 'Truculenta', sans-serif;  
+    align-items: center;
+    justify-content: center;
+}
+
+.PERFIL h3{
+    font-size: 25px;
+    margin-bottom: 15px;
+    -webkit-text-stroke: 1px white;
+    font-family: impact;
+    text-align: center; 
+    display: flex;
+   justify-content: center;
+}
+
+
+.img2{
+display:block;
+margin:auto;
+}
+
+.input-foto{
+    position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	width:100%;
+	height:100%;
+	opacity: 0;
+   
+}
+
+
+p#texto{
+	text-align: center;
+	color:black;
+        font-family: 'Truculenta',sans-serif; 
+       
+}
+div#divPLACEHOLDER{
+    text-align: center;
+          margin:auto;
+        margin-top: 10px;
+	margin:auto;
+        margin-top: 10px;
+	padding:10px;
+	width:150px;
+        position:relative;
+	background-color: #B4F8C8;
+	-webkit-border-radius:5px;
+        margin-bottom: 10px;
+}
+ 
+label {
+  padding: 12px 10px 12px 40px;
+  display: inline-block;
+}
+
+.input2[type=text]{
+  width: 85%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+ 
+
+.input-48{
+    color: black;
+    width: 48%;
+    font-family: 'Truculenta', sans-serif;    
+
+}
+
+.col-753{
+margin-bottom: 15px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid black;
+    font-family: 'Truculenta', sans-serif;  
+}
+
+.fechita{
+    width: 85%;
+  padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-family: 'Truculenta', sans-serif;  
+}
+
+.Boton_actualizar{
+border-radius: 15px;
+color:black;
+background:#B4F8C8;
+width: 100%;
+padding: 10px 100px;
+margin:10px;
+font-family: 'Truculenta',sans-serif; 
+font-size: 30px;
+outline: none;
+border: 0;
+}
+
+.errores{
+    font-family: 'Truculenta',sans-serif;
+-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+   -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+   -o-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+   background: red;
+   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+   color:#fff;
+   display: none ;
+   font-size: 14px;
+   margin-top: 20px;
+   margin-left: -234px;
+   padding: 5px;
+   position:absolute;
+   
+    
+}
+
+
