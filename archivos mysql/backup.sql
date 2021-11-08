@@ -56,7 +56,7 @@ CREATE TABLE `nota` (
   PRIMARY KEY (`Id_Nota`),
   KEY `FK_USUARIO_NOTA_idx` (`Nombre_Usuario`),
   CONSTRAINT `FK_USUARIO_NOTA` FOREIGN KEY (`Nombre_Usuario`) REFERENCES `usuario` (`Nombre_Usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +65,7 @@ CREATE TABLE `nota` (
 
 LOCK TABLES `nota` WRITE;
 /*!40000 ALTER TABLE `nota` DISABLE KEYS */;
-INSERT INTO `nota` VALUES (8,'lidy2','nota de diana modificada                ','2021-10-14 01:18:21',1),(9,'chuck','nota de chuck                ','2021-10-14 01:19:13',0);
+INSERT INTO `nota` VALUES (8,'lidy2','nota de diana modificada                ','2021-10-14 01:18:21',1),(9,'chuck','nota de chuck                ','2021-10-14 01:19:13',0),(10,'alex1234','nota 10 modificada             ','2021-10-19 17:57:00',1),(11,'alex1234','nota de alex 2','2021-10-19 17:57:39',0);
 /*!40000 ALTER TABLE `nota` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +97,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES ('chuck','Jose Carlos','Torres Coronado','2000-07-26','jctorresc@gmail.com','assets/imagenes/Fotografia1634191299189.png','12345678','2021-10-14 01:01:39'),('lidy2','diana laura','Torres Coronado','1997-01-26','lidy@gmail.com','assets/imagenes/Fotografia1634192282078.png','87654321','2021-10-14 01:18:02');
+INSERT INTO `usuario` VALUES ('alex1234','alex','reynoso','2000-01-01','alexandra@gmail.com','assets/imagenes/Fotografia1634683978730.png','12345678','2021-10-19 17:52:59'),('chuck','Jose Carlos','Torres Coronado','2000-07-26','jctorresc@gmail.com','assets/imagenes/Fotografia1634191299189.png','12345678','2021-10-14 01:01:39'),('chuck2','jose carlos','torres','0000-00-00','contrasenia','si','12345678','2021-10-19 17:02:54'),('lidy2','diana laura','Torres Coronado','1997-01-26','lidy@gmail.com','assets/imagenes/Fotografia1634192282078.png','87654321','2021-10-14 01:18:02');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -266,4 +266,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-18 21:39:00
+-- Dump completed on 2021-11-08 16:04:16

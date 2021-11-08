@@ -49,7 +49,7 @@
                     <input type="date" id="fecha_nacimiento" min='1900-01-01' max = '2000-01-01' value='2000-01-01' name="fechadenacimiento" class="input-48" >
 
                     <p class="input-foto-text">Foto de Perfil</p>
-                    <img alt= "FotoUsuario" id="FotografiadePerfil" class="fotoperfil"> 
+                    <img alt= "FotoUsuario" id="FotografiadePerfil" class="fotoperfil" height="240" width="100"> 
                     <input id="FotoUsuario" type="file"  name="Fotografia" placeholder="Foto de perfil" class="input-foto" required>
 
                     <input type="email" id = "Email" name="Correo" placeholder="Correo" class="input-100" >
