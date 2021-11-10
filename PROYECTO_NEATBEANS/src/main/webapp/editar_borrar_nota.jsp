@@ -11,9 +11,9 @@
 <!DOCTYPE html>
 
 <%
- 
+ String notaid = session.getAttribute("NotaID").toString();
+
  session = request.getSession();
- 
  Nota nota =  NotaDAO.getNotaById(10);
 System.out.println(nota);
  %>
@@ -69,16 +69,16 @@ System.out.println(nota);
                 <textarea class="controls" rows = "1" cols = "10" name = "description" id="description">
                 </textarea>
                 <!-- CONTENEDOR DE TAGS -->
-                <h4>Etiquetas</h4>
+                <h4><%=notaid%></h4>
                 <div class="tag-container">
                     <input/>
                 </div>
                 <div class="botones">
-                    <input type="hidden" name ="id" value="<%= nota.getIdNota() %>">
+                    
                     <input class="boton" id="btnenviar" type="submit" value="Guardar">
               
                 
-                    <a class="boton" id="btnenviar" type="button" href ="DeleteNoteController?id=<%= nota.getIdNota() %>" "index.jsp">Borrar</a>
+                    
                 </div>
                  </form> 
             </section>

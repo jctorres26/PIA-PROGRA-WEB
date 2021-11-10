@@ -263,3 +263,24 @@ body{
      font-weight: bold;
       font-family: 'Truculenta', sans-serif;
  }
+ 
+ /* 
+    Aqui abajo van los estilos para dashboard container
+*/
+
+.containerDASHBOARD{
+    width: 1000px;
+    background: #FFE1AE;
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    color: black;
+    font-family: 'Truculenta', sans-serif;  
+    align-items: center;
+    justify-content: center;
+}
+
+.LINK{
+    text-decoration: none;
+}

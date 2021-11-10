@@ -81,21 +81,27 @@ System.out.println(notas);
         -->
         <!-- MAIN CLASS -->
         <main class="main">
+           
+            
+            <% for (Nota nota: notas){ %>
+            
+            <form class="containerDASHBOARD" action="editar_borrar_nota.jsp" method="post" onclick="CHECAR">
+                    <h4>¡Notebank!</h4>
+                    <input type="hidden" name="id" value="<%=nota.getIdNota()%>">
+                    <p>
+                        <%=nota.getDescripcion()%>
+                    </p>
+                    
+                    <input type="submit" value="...">
+                </form>
+           
+                <%}%>
+            
+
+         
             
         </main>
-        <!-- FOOTER 
-         <footer class="footer">
-            <div class="container">
-                <nav class="nav_footer">
-                    <img src="assets/imagenes/LOGO.png" width="250" height="90" >
-                    <ul class="nav_barra_f">
-                        <li class="nav_barra_item_f"> Contactanos: Notebank@gmail.com  Telefono: 8120052167</li>
-                        
-                    </ul>
-                </nav>
-            </div>
-        </footer>
-        -->
+      
         <footer class= "footer">
             <div class= "container-footer">
                 <nav class="row">
@@ -118,8 +124,12 @@ System.out.println(notas);
         </footer>
 
         <script >
+            function CHECAR(){
+            <% String notaid="10";%>
+            <%session.setAttribute("NotaID",notaid);%> 
+    }
         
-    </script>
+        </script>
     </body>
     
     
