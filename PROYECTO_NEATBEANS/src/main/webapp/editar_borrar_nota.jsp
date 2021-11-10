@@ -76,8 +76,9 @@ System.out.println(nota);
                     <input/>
                 </div>
                 <div class="botones">
-                    
+                    <input type="hidden" name ="id" value="<%= nota.getIdNota() %>">
                     <input class="boton" id="btnenviar" type="submit" value="Guardar">
+                    <a class="boton" id="btnenviar" type="button" href ="DeleteNoteController?id=<%= nota.getIdNota() %>" "index.jsp">Borrar</a>
               
                 
                     

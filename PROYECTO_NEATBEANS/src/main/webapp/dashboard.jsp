@@ -85,18 +85,18 @@ System.out.println(notas);
             
             <% for (Nota nota: notas){ %>
             
-            <form class="containerDASHBOARD" action="editar_borrar_nota.jsp" method="post" onclick="CHECAR">
+            <form class="containerDASHBOARD" action="EditNoteController?idNota=<%=nota.getIdNota()%>" method="POST" onclick="CHECAR">
                     <h4>¡Notebank!</h4>
-                    <input type="hidden" name="id" value="<%=nota.getIdNota()%>">
+                    <input type="hidden" name="idNota" value="<%=nota.getIdNota()%>">
                     <p>
                         <%=nota.getDescripcion()
                         
                         %>
                         
                     </p>
-                    <% session.setAttribute("idNota", nota.getIdNota());
+                    
                         
-                        %>
+                   
                     <input type="submit" value="...">
                 </form>
            
