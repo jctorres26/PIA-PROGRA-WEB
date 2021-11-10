@@ -89,9 +89,14 @@ System.out.println(notas);
                     <h4>¡Notebank!</h4>
                     <input type="hidden" name="id" value="<%=nota.getIdNota()%>">
                     <p>
-                        <%=nota.getDescripcion()%>
+                        <%=nota.getDescripcion()
+                        
+                        %>
+                        
                     </p>
-                    
+                    <% session.setAttribute("idNota", nota.getIdNota());
+                        
+                        %>
                     <input type="submit" value="...">
                 </form>
            

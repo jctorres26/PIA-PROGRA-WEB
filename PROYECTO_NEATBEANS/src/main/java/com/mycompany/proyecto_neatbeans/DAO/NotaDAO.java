@@ -46,12 +46,13 @@ public class NotaDAO {
        
        
        public static List<Nota> getNotasByUsuario (String username){
-           List<Nota> notas = new ArrayList<>();
-           Connection con = null;
-        try{
-            
+           
          
-         con = DbConnection.getConnection();
+        try{
+            List<Nota> notas = new ArrayList<>();
+            Connection con = DbConnection.getConnection();
+         
+        
         String qry = "CALL sp_nota('SelectNotasByUsuario',NULL,?,NULL);";
         CallableStatement statement =  con.prepareCall(qry);
        statement.setString(1,username);
@@ -63,12 +64,16 @@ public class NotaDAO {
         notas.add(new Nota(id, usernameNota, descripcion));
         
         }
+        result.close();
+        statement.close();
+        con.close();
+        return notas;
             
     }
      catch(SQLException e){
         System.out.println(e.getMessage());
         }
-       return notas;
+       return null;
        }
        
        public static Nota getNotaById (int idNota){

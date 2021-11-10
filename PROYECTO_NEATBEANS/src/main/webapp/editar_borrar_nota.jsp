@@ -11,10 +11,10 @@
 <!DOCTYPE html>
 
 <%
- String notaid = session.getAttribute("NotaID").toString();
+ String notaid = session.getAttribute("idNota").toString();
 
  session = request.getSession();
- Nota nota =  NotaDAO.getNotaById(10);
+ Nota nota =  NotaDAO.getNotaById(Integer.parseInt(notaid));
 System.out.println(nota);
  %>
 
@@ -67,6 +67,8 @@ System.out.println(nota);
             <section class="creacion_nota">
                 <form  action="UpdateNoteController" method="POST"  > 
                 <textarea class="controls" rows = "1" cols = "10" name = "description" id="description">
+
+                  <%= nota.getDescripcion() %>
                 </textarea>
                 <!-- CONTENEDOR DE TAGS -->
                 <h4><%=notaid%></h4>
