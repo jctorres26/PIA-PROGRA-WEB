@@ -9,6 +9,9 @@ import com.mycompany.proyecto_neatbeans.DAO.NotaDAO;
 import com.mycompany.proyecto_neatbeans.models.Nota;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -61,16 +64,20 @@ public class DeleteNoteController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-          String id =  request.getParameter("id");
-        int idNota = Integer.parseInt(id);
-     
-        
-        Nota nota = new Nota(idNota);
-        int result = NotaDAO.deleteNota(nota);
-        
-        if(result!= 0){
-        
-         response.sendRedirect("dashboard.jsp");
+        try {
+            String id =  request.getParameter("id");
+            int idNota = Integer.parseInt(id);
+            
+            
+            Nota nota = new Nota(idNota);
+            int result = NotaDAO.deleteNota(nota);
+            
+            if(result!= 0){
+                
+                response.sendRedirect("dashboard.jsp");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DeleteNoteController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
