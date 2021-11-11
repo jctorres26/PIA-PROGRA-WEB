@@ -13,16 +13,20 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author ALEXANDRA
  */
 @WebServlet(name="ProfileController", urlPatterns={"/ProfileController"})
+@MultipartConfig(maxFileSize = -1, maxRequestSize = -1)
+
 public class ProfileController extends HttpServlet {
    
     /** 
@@ -86,7 +90,16 @@ public class ProfileController extends HttpServlet {
 
             
             if(result!= 0){
+                 HttpSession session = request.getSession(true);
+                 session.setAttribute("Username", username);
                 
+        session.setAttribute("Nombre", nombre);
+        session.setAttribute("Apellido", apellido);
+        session.setAttribute("FechaNac", fechaNac);
+        session.setAttribute("Correo", correo);
+       
+
+        session.setAttribute("Contra", password);
                 response.sendRedirect("perfil.jsp");
             }
         } catch (SQLException ex) {

@@ -67,7 +67,7 @@
                 <img class="img2" src="assets/imagenes/foto.png" width="150" height="140" >
                 <div id="divPLACEHOLDER">
                    
-                <input id="FotoUsuario" type="file"  name="Fotografia" placeholder="Foto de perfil" class="input-foto" required>
+                <input id="FotoUsuario" type="file"  name="Fotografia" placeholder="Foto de perfil" class="input-foto" >
               <p id="texto">   Cambiar foto</p>
                 </div>
                 
