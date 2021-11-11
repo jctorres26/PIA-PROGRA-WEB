@@ -64,7 +64,9 @@ public class UserDAO {
           String fechaNac = resultSet.getString("Fecha_Nacimiento");
            String correo = resultSet.getString("Correo");
             String imgPerfil = resultSet.getString("Imagen_Perfil");
-            return new User(username, nombre, apellido, fechaNac, correo, imgPerfil);
+
+            String contra = resultSet.getString("Contra");
+            return new User(username, nombre, apellido, fechaNac, correo, imgPerfil,contra);
         
         }
         
@@ -76,5 +78,37 @@ public class UserDAO {
         
         return null;
     
+    }
+
+
+
+public static int updateUsuario(User user) throws SQLException {
+                
+               Connection con = null;
+    try{
+         con = DbConnection.getConnection();
+        String qry = "CALL sp_usuario('UpdateUsuario',?,?,?,?,?,NULL,?);";
+        CallableStatement statement =  con.prepareCall(qry);
+        
+        statement.setString(1, user.getUsername());
+        statement.setString(2, user.getNombre());
+        statement.setString(3, user.getApellido());
+        statement.setString(4, user.getFechaNac());
+        statement.setString(5, user.getCorreo());
+        statement.setString(6, user.getPassword());
+
+       return statement.executeUpdate();
+       
+        
+        
+    }
+     catch(SQLException e){
+        System.out.println(e.getMessage());
+        }
+    finally{
+    con.close();
+    
+    }
+    return 0;
     }
 }

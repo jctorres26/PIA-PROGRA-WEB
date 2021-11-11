@@ -27,6 +27,15 @@ public class User {
         this.password = password;
     }
 
+public User(String username, String nombre, String apellido, String fechaNac, String correo, String password){
+        this.username = username;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNac = fechaNac;
+        this.correo = correo;
+        this.password = password;
+}
+
     
     public User(String username, String nombre, String apellido, String fechaNac, String correo, String imagenPerfil, String password) {
         this.username = username;
@@ -37,7 +46,7 @@ public class User {
         this.imagenPerfil = imagenPerfil;
         this.password = password;
     }
-
+/*
     public User(String username, String nombre, String apellido, String fechaNac, String correo, String imagenPerfil) {
         this.username = username;
         this.nombre = nombre;
@@ -46,6 +55,7 @@ public class User {
         this.correo = correo;
         this.imagenPerfil = imagenPerfil;
     }
+*/
 
     public String getNombre() {
         return nombre;

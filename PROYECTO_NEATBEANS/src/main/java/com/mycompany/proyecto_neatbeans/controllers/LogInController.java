@@ -70,6 +70,8 @@ public class LogInController extends HttpServlet {
         session.setAttribute("FechaNac", result.getFechaNac());
         session.setAttribute("Correo", result.getCorreo());
         session.setAttribute("ImagenPerfil", result.getImagenPerfil());
+
+        session.setAttribute("Contra", result.getPassword());
         request.getRequestDispatcher("dashboard.jsp").forward(request, response);
         
         }else{

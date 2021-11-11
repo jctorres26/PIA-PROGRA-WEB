@@ -22,7 +22,7 @@
         <script src="assets/javascript/validar_perfil.js"></script>
         <title>Perfil</title>
     </head>
-    <body style="background-color: #A0E7E5;">
+    <body style="background-color: #A0E7E5;" >
         <!-- BARRA NAVEGACION -->
         <header class="header">
             <nav class="nav">
@@ -59,10 +59,11 @@
         <!-- DATOS PERFIL -->
         
         <!-- MAIN CLASS -->
-        <main class="main">
+        
 
-            <form class="PERFIL" name="Editar_perfil" action="" method="POST" enctype="multipart/form-data" onsubmit="return validar();" > 
+            <form class="PERFIL" name="Editar_perfil" action="ProfileController" method="POST" enctype="multipart/form-data" onsubmit="return validar();" > 
                 <h3>  ¡Hola <%=session.getAttribute("Username")%> ! </h3>
+                <input type="hidden" name ="usuario" value="<%=session.getAttribute("Username")%>">
                 <img class="img2" src="assets/imagenes/foto.png" width="150" height="140" >
                 <div id="divPLACEHOLDER">
                    
@@ -70,17 +71,6 @@
               <p id="texto">   Cambiar foto</p>
                 </div>
                 
-                <!-- ENTRADA DE DATOS 
-                
-                    <label for="Nombre">Nombre(s)</label>
-                    <input type="text" id="Nombre" name="Nombre" value="" class="input-48" >
-                    <div id="mensaje1" class="errores">Formato de nombre incorrecto</div>
-               
-                    <label for="Apellido">Apellidos(s)</label>
-                    <input type="text" id = "Apellido" name="Apellido" placeholder="Apellido(s)" class="input-48" >
-                    <div id="mensaje2" class="errores" >Formato de apellido incorrecto</div>
-               
-                -->
                  <!-- NOMBRES -->
                  <div id="mensaje1" class="errores">Formato de nombre incorrecto</div>
                  <div id="mensaje2" class="errores" >Formato de apellido incorrecto</div>
@@ -91,7 +81,7 @@
                         <label for="Nombre">Nombre(s)</label>
                     </div>
                     <div class="col-75">
-                        <input class="input2" type="text" id="Nombre" name="Nombre" value="">
+                        <input class="input2" type="text" id="Nombre" name="Nombre" value="<%=session.getAttribute("Nombre")%>">
                         
                     </div>
                 </div>
@@ -101,7 +91,7 @@
                         <label for="Apellido">Apellidos(s)</label>
                     </div>
                     <div class="col-75">
-                        <input class="input2" type="text" id="Apellido" name="Apellido" value="">
+                        <input class="input2" type="text" id="Apellido" name="Apellido" value="<%=session.getAttribute("Apellido")%>">
                     </div>
                 </div>
                  <!-- CORREO -->
@@ -110,7 +100,7 @@
                         <label for="correo">Correo Eletronico</label>
                     </div>
                     <div class="col-75">
-                        <input class="input2" type="text" id="correo" name="correo" value="" >
+                        <input class="input2" type="text" id="correo" name="correo" value="<%=session.getAttribute("Correo")%>" >
                     </div>
                 </div>
                  <!-- FECHA NACIMIENTO -->
@@ -119,7 +109,7 @@
                         <label for="fecha">Fecha Nacimiento</label>
                     </div>
                     <div class="col-75">
-                        <input class="fechita" type="date" min='1900-01-01' max = '2000-01-01' value='' id="fecha" name="fecha" value="" >
+                        <input class="fechita" type="date" min='1900-01-01' max = '2000-01-01' value='<%=session.getAttribute("FechaNac")%>' id="fecha" name="fecha" value="" >
                     </div>
                 </div>
                   <!-- EDAD -->
@@ -138,16 +128,17 @@
                         <label for="contra">Contraseña</label>
                     </div>
                     <div class="col-75">
-                        <input class="input2" type="text" id="contra" name="contra" value="" >
+                        <input class="input2" type="text" id="contra" name="contra" value="<%=session.getAttribute("Contra")%>" >
                     </div>
                 </div>
+                    <p id="demo" name="demo"></p>
                    
                <input type="submit"id="enviar" value="Actualizar" class="Boton_actualizar" onclick=" return validar()" >
 
 
             </form> 
 
-        </main>
+        
         
         <!-- FOOTER -->
         <footer class= "footer">
@@ -170,7 +161,6 @@
                 </nav>
             </div>
         </footer>
-        
         
         
          <script> 
@@ -257,13 +247,39 @@ if( !(emailTxt.match(email))){
 
 });
 
-      
+      $(function(){
+            $('#fecha').on('change', calcularEdad);
+        });
+        
+        function calcularEdad() {
+            
+            fecha = $(this).val();
+            var hoy = new Date();
+            var cumpleanos = new Date(fecha);
+            var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+            var m = hoy.getMonth() - cumpleanos.getMonth();
 
-      
+            if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+                edad--;
+            }
+            $('#Edad').val(edad);
+        }
+      $(document).ready(function (){
+ 
+    var hoy = new Date();
+            var fecha1='<%=session.getAttribute("FechaNac")%>';
+            var cumpleanos = new Date(fecha1);
+            var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+            var m = hoy.getMonth() - cumpleanos.getMonth();
 
-      
-
+            if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+                edad--;
+            }
+            $('#Edad').val(edad);
+ 
+});
         </script>
         
     </body>
 </html>
+
