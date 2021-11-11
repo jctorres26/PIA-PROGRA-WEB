@@ -66,7 +66,7 @@ public class NotaDAO {
         }
         result.close();
         statement.close();
-        con.close();
+       con.close();
         return notas;
             
     }
@@ -91,9 +91,13 @@ public class NotaDAO {
         int id = result.getInt("Id_Nota");
         String usernameNota =  result.getString("Nombre_Usuario");
         String descripcion = result.getString("Descripcion");
+         result.close();
+        statement.close();
+       con.close();
         return new Nota(id, usernameNota, descripcion);
         
         }
+        
             
     }
      catch(SQLException e){
@@ -102,32 +106,40 @@ public class NotaDAO {
        return null;
        }
        
-            public static int updateNota(Nota nota) {
+            public static int updateNota(Nota nota) throws SQLException {
+                
+               Connection con = null;
     try{
-        Connection con = DbConnection.getConnection();
+         con = DbConnection.getConnection();
         String qry = "CALL sp_nota('UpdateNota',?,NULL,?);";
         CallableStatement statement =  con.prepareCall(qry);
         
         statement.setInt(1, nota.getIdNota());
         statement.setString(2, nota.getDescripcion());
        
+       
         
-        return statement.executeUpdate();
-        
+       return statement.executeUpdate();
+       
         
         
     }
      catch(SQLException e){
         System.out.println(e.getMessage());
         }
+    finally{
+    con.close();
     
+    }
     return 0;
     }
        
        
-            public static int deleteNota(Nota nota) {
+            public static int deleteNota(Nota nota) throws SQLException {
+                
+                Connection con = null;
     try{
-        Connection con = DbConnection.getConnection();
+         con = DbConnection.getConnection();
         String qry = "CALL sp_nota('EliminarNota',?,NULL,NULL);";
         CallableStatement statement =  con.prepareCall(qry);
         
@@ -143,7 +155,10 @@ public class NotaDAO {
      catch(SQLException e){
         System.out.println(e.getMessage());
         }
+    finally{
+    con.close();
     
+    }
     return 0;
     }
        
