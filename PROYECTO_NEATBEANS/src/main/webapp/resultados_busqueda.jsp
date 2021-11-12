@@ -12,8 +12,8 @@
  
  session = request.getSession();
  
- List <Nota> notas =  NotaDAO.getNotasByUsuario((String)session.getAttribute("Username"));
-System.out.println(notas);
+ List <Nota> notas =  (List<Nota>)session.getAttribute("busquedaSimple");
+
  %>
 
 

@@ -38,7 +38,7 @@ System.out.println(nota);
 
                 <ul class="nav_barra">
                  
-                    <form  action="busqueda_avanzada.jsp" method="POST" ;" >
+                    <form  action="SimpleSearchController?username=<%= session.getAttribute("Username")%>" method="POST" ;" >
                         <li class="nav_barra_item"> 
                             <input type="text" name="search" placeholder= "Busca tu nota" class="Barra_busqueda" autocomplete="off">
                             <input class="btn_buscar" id="btnenviar" type="submit" value="Buscar">

@@ -14,3 +14,6 @@ call sp_nota("EliminarNota",1,"chuck","Esto es una nota");
 call sp_nota("SelectNotaById",8,"chuck","Esto es una nota");
 
 call sp_etiqueta("Insert","etiqueta2",1);
+
+call sp_busqueda("o","chuck");
+

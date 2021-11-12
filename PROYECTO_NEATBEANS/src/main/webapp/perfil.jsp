@@ -32,7 +32,7 @@
                 <ul class="nav_barra">
                     <!--  <li class="nav_barra_item"> <a href="dashboard.jsp" class="nav_barra_link"> DASHBOARD </a> </li> -->
 
-                    <form  action="busqueda_avanzada.jsp" method="POST" ;" >
+                    <form  action="SimpleSearchController?username=<%= session.getAttribute("Username")%>" method="POST" ;" >
                         <li class="nav_barra_item"> 
                             <input type="text" name="search" placeholder= "Busca tu nota" class="Barra_busqueda" autocomplete="off">
                             <input class="btn_buscar" id="btnenviar" type="submit" value="Buscar">
@@ -48,7 +48,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav_barra_item"> <a href="perfil.jsp" class="nav_barra_link"> <img src="assets/imagenes/foto.png" width="100" height="90" align="left">Perfil de usuario </a> </li>
+                    <li class="nav_barra_item"> <a href="perfil.jsp" class="nav_barra_link"> <img src="<%= session.getAttribute("ImagenPerfil") %>" width="100" height="90" align="left">Perfil de usuario </a> </li>
                     <li class="nav_barra_item"> <a href="LogOffController" class="nav_barra_link"> LOG OUT </a> </li>
 
                 </ul>
@@ -64,10 +64,10 @@
             <form class="PERFIL" name="Editar_perfil" action="ProfileController" method="POST" enctype="multipart/form-data" onsubmit="return validar();" > 
                 <h3>  ¡Hola <%=session.getAttribute("Username")%> ! </h3>
                 <input type="hidden" name ="usuario" value="<%=session.getAttribute("Username")%>">
-                <img class="img2" src="assets/imagenes/foto.png" width="150" height="140" >
+                <img class="img2" id="FotografiadePerfil" name="fotografia"  src="<%= session.getAttribute("ImagenPerfil") %>" width="150" height="140" >
                 <div id="divPLACEHOLDER">
                    
-                <input id="FotoUsuario" type="file"  name="Fotografia" placeholder="Foto de perfil" class="input-foto" >
+                <input  id="FotoUsuario" type="file"  name="Fotografia" placeholder="Foto de perfil" class="input-foto" >
               <p id="texto">   Cambiar foto</p>
                 </div>
                 
@@ -151,12 +151,12 @@
                     <!-- MENU1 --> 
                     <ul class="Info">
                         <li class="font-weight-bold text-uppercase">Contacto</li>
-                        
+                        <li >Contacto</li>
                     </ul>
                     <!-- MENU2 --> 
                     <ul class="Catego">
                         <li class="font-weight-bold text-uppercase">Contacto</li>
-                        
+                        <li >Contacto</li>
                     </ul>
                 </nav>
             </div>

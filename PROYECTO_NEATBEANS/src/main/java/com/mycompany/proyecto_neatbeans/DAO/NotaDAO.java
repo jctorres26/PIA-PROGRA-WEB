@@ -76,6 +76,42 @@ public class NotaDAO {
        return null;
        }
        
+       public static List<Nota> getNotasByBusquedaSimple (String username, String busqueda){
+           
+         
+        try{
+            List<Nota> notas = new ArrayList<>();
+            Connection con = DbConnection.getConnection();
+         
+        
+        String qry = "CALL sp_busqueda(?,?);";
+        CallableStatement statement =  con.prepareCall(qry);
+        statement.setString(1,busqueda);
+       statement.setString(2,username);
+       
+       ResultSet result = statement.executeQuery();
+        while(result.next()){
+        int id = result.getInt("Id_Nota");
+        String usernameNota =  result.getString("Nombre_Usuario");
+        String descripcion = result.getString("Descripcion");
+        notas.add(new Nota(id, usernameNota, descripcion));
+        
+        }
+        result.close();
+        statement.close();
+       con.close();
+        return notas;
+            
+    }
+     catch(SQLException e){
+        System.out.println(e.getMessage());
+        }
+       return null;
+       }
+       
+       
+       
+       
        public static Nota getNotaById (int idNota){
            
            Connection con = null;

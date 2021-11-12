@@ -6,7 +6,8 @@
 
 body{
     font-family: impact;
-    padding: 90px 20px 0;
+    padding: 90px 0;
+    margin: 0;
 }
 
 .header{
@@ -106,17 +107,14 @@ body{
     border-radius: 25px;
 }
 
-.footer{
-   height:90px;
-  line-height:20px;
-  background:#FFAEBC;
-  color:white;
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  
-  
+ .footer{
+    background:#FFAEBC;
+     color:black; 
+     padding: 2.2rem 0;
+     margin-top: 8rem;
+     margin-bottom: -90px;
+     font-family: 'Truculenta', sans-serif; 
+      width:100%;
  }
  
  .container{
@@ -159,3 +157,13 @@ position:absolute;
 
  }
  
+ nav.row {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+ul {
+    list-style: none;
+    margin: auto;
+}

@@ -7,6 +7,8 @@
 package com.mycompany.proyecto_neatbeans.controllers;
 import com.mycompany.proyecto_neatbeans.DAO.UserDAO;
 import com.mycompany.proyecto_neatbeans.models.User;
+import com.mycompany.proyecto_neatbeans.utils.FileUtils;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -19,6 +21,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 /**
  *
@@ -85,7 +88,22 @@ public class ProfileController extends HttpServlet {
             String fechaNac = request.getParameter("fecha");
             String correo = request.getParameter("correo");
             String password = request.getParameter("contra");
-            User user =  new User(username, nombre,apellido,fechaNac,correo,password);
+           
+             String path = request.getServletContext().getRealPath("");   
+        File fileSaveDir = new File(path + FileUtils.RUTE_USER_IMAGE);
+        
+        if(!fileSaveDir.exists()){
+            fileSaveDir.mkdir();
+        }
+        
+        Part file = request.getPart("Fotografia");
+         String contentType = file.getContentType();
+      String nameImage = file.getName() + System.currentTimeMillis() + FileUtils.GetExtension(contentType);
+       String fullPath = path + FileUtils.RUTE_USER_IMAGE + "/" + nameImage;
+       file.write(fullPath);
+       
+   User user =  new User(username, nombre,apellido,fechaNac,correo,FileUtils.RUTE_USER_IMAGE + "/" + nameImage  ,password);
+            
             int result = UserDAO.updateUsuario(user);
 
             
@@ -97,9 +115,9 @@ public class ProfileController extends HttpServlet {
         session.setAttribute("Apellido", apellido);
         session.setAttribute("FechaNac", fechaNac);
         session.setAttribute("Correo", correo);
-       
-
         session.setAttribute("Contra", password);
+        session.setAttribute("ImagenPerfil", FileUtils.RUTE_USER_IMAGE + "/" + nameImage);
+        
                 response.sendRedirect("perfil.jsp");
             }
         } catch (SQLException ex) {

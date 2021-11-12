@@ -87,7 +87,7 @@ public static int updateUsuario(User user) throws SQLException {
                Connection con = null;
     try{
          con = DbConnection.getConnection();
-        String qry = "CALL sp_usuario('UpdateUsuario',?,?,?,?,?,NULL,?);";
+        String qry = "CALL sp_usuario('UpdateUsuario',?,?,?,?,?,?,?);";
         CallableStatement statement =  con.prepareCall(qry);
         
         statement.setString(1, user.getUsername());
@@ -95,7 +95,8 @@ public static int updateUsuario(User user) throws SQLException {
         statement.setString(3, user.getApellido());
         statement.setString(4, user.getFechaNac());
         statement.setString(5, user.getCorreo());
-        statement.setString(6, user.getPassword());
+        statement.setString(6, user.getImagenPerfil());
+        statement.setString(7, user.getPassword());
 
        return statement.executeUpdate();
        

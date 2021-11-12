@@ -27,7 +27,7 @@
                 <ul class="nav_barra">
                     <!--  <li class="nav_barra_item"> <a href="dashboard.jsp" class="nav_barra_link"> DASHBOARD </a> </li> -->
 
-                    <form  action="busqueda_avanzada.jsp" method="POST" ;" >
+                    <form  action="SimpleSearchController?username=<%= session.getAttribute("Username")%>" method="POST" ;" >
                         <li class="nav_barra_item"> 
                             <input type="text" name="search" placeholder= "Busca tu nota" class="Barra_busqueda" autocomplete="off">
                             <input class="btn_buscar" id="btnenviar" type="submit" value="Buscar">
@@ -84,7 +84,7 @@
         </main>
          
           <!-- FOOTER -->
-           <footer class= "footer">
+          <footer class= "footer">
             <div class= "container-footer">
                 <nav class="row">
                     <!-- LOGO -->
@@ -94,12 +94,12 @@
                     <!-- MENU1 --> 
                     <ul class="Info">
                         <li class="font-weight-bold text-uppercase">Contacto</li>
-                        
+                         <li >Contacto</li>
                     </ul>
                     <!-- MENU2 --> 
                     <ul class="Catego">
                         <li class="font-weight-bold text-uppercase">Contacto</li>
-                        
+                           <li >Contacto</li>
                     </ul>
                 </nav>
             </div>

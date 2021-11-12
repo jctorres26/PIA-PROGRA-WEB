@@ -15,13 +15,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author jctor
  */
-@WebServlet(name = "GetNotesController", urlPatterns = {"/GetNotesController"})
-public class GetNotesController extends HttpServlet {
+@WebServlet(name = "SimpleSearchController", urlPatterns = {"/SimpleSearchController"})
+public class SimpleSearchController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,10 +41,10 @@ public class GetNotesController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet GetNotesController</title>");            
+            out.println("<title>Servlet SimpleSearchController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet GetNotesController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SimpleSearchController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -61,19 +62,30 @@ public class GetNotesController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        List <Nota> notas = NotaDAO.getNotasByUsuario((String) request.getSession().getAttribute("Username"));
-        request.setAttribute("Notas", notas);
-        request.getRequestDispatcher("dashboard.jsp").forward(request, response);
-        
-      
+        processRequest(request, response);
     }
 
-   
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        String username =  request.getParameter("username");
+        String busqueda = request.getParameter("search");
+        
+        List <Nota> notas = NotaDAO.getNotasByBusquedaSimple(username, busqueda);
+        
+        HttpSession session = request.getSession(true);
+        session.setAttribute("busquedaSimple", notas);
        
+         response.sendRedirect("resultados_busqueda.jsp");
         
     }
 

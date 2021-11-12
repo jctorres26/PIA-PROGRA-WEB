@@ -58,13 +58,22 @@
             
             
         </main>
-        <footer class="footer">
-            <div class="container">
-                <nav class="nav_footer">
-                    <img src="assets/imagenes/LOGO.png" width="250" height="90" >
-                    <ul class="nav_barra_f">
-                        <li class="nav_barra_item_f"> Contactanos: Notebank@gmail.com  Telefono: 8120052167</li>
-                        
+         <footer class= "footer">
+            <div class= "container-footer">
+                <nav class="row">
+                    <!-- LOGO -->
+                    <a href="#" class="logotipo">
+                        <img src="assets/imagenes/LOGO.png" width="250" height="90" alt ="Logo marca" class="img-logo mr-2">
+                    </a>
+                    <!-- MENU1 --> 
+                    <ul class="Info">
+                        <li class="font-weight-bold text-uppercase">Contacto</li>
+                        <li >Contacto</li>
+                    </ul>
+                    <!-- MENU2 --> 
+                    <ul class="Catego">
+                        <li class="font-weight-bold text-uppercase">Contacto</li>
+                        <li >Contacto</li>
                     </ul>
                 </nav>
             </div>
