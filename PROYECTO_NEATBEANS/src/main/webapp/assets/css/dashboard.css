@@ -58,8 +58,8 @@ body{
     background-color: #FBE7C6;
 }
 .subbarra{
-     list-style: none;
-    list-style-type: none;
+  list-style: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -119,45 +119,7 @@ body{
      font-weight: bold;
       font-family: 'Truculenta', sans-serif;
  }
-/* 
-.footer{
-   height:90px;
-  line-height:20px;
-  background:#FFAEBC;
-  color:white;
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  
-  
- }
- 
- .container{
-     display:flex;
-    justify-content: space-between;
- }
- 
- .nav_footer{
-     display: flex;
- }
- 
- .nav_barra_f{
-     display: flex;
-    list-style: none;
-    align-items: center;
-    margin-left: 650px;
- }
- 
- .nav_barra_item_f{
-     font-family: 'Truculenta', sans-serif; 
-     font-size: 15px;
-    line-height: 30px;
-    color:black;
-    
- }
- 
-*/
+
 
 .footer{
      background:#FFAEBC;
@@ -202,8 +164,8 @@ body{
  
 
  .subbarra{
-     list-style: none;
-    list-style-type: none;
+  list-style: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -283,4 +245,46 @@ body{
 
 .LINK{
     text-decoration: none;
+}
+/* 
+    PAGINACION
+*/
+
+
+.listaP{
+     display:flex;
+     justify-content: center;
+     list-style: none;
+    margin-top: 30px;
+}
+
+
+.page-item{
+    margin-right: 5px;
+    background-color: #FBE7C6;
+    padding: 8px 12px;
+    border-radius: 3px;
+    text-align: center;
+    color:black;
+    
+}
+
+.page-link{
+    padding: 8px 12px;
+    border-radius: 3px;
+    margin-right: 5px;
+    background-color: #FBE7C6;
+  list-style: none;
+  list-style-type: none;
+    text-decoration: none;
+     color:black; 
+    
+}
+.page-item-indice{
+     margin-right: 5px;
+    background-color: #FBE7C6;
+    padding: 8px 12px;
+    border-radius: 3px;
+    text-align: center;
+    color:black; 
 }

@@ -20,6 +20,7 @@ import java.util.List;
  * @author jctor
  */
 public class NotaDAO {
+    Nota nota;
     
     
        public static int insertNota(Nota nota) {
@@ -198,6 +199,52 @@ public class NotaDAO {
     }
    return 0;
     }
+
+public static List listar(int indice, int cantidad,String username){
+            ArrayList<Nota> list = new ArrayList();
+try{
+Connection con = null;
+con = DbConnection.getConnection();
+        String qry = "SELECT * FROM nota WHERE Nombre_Usuario=? AND Eliminada=0 LIMIT ?,?;";
+        CallableStatement statement =  con.prepareCall(qry);
+statement.setString(1, username);
+        statement.setInt(2, indice);
+        statement.setInt(3, cantidad);
+        ResultSet result = statement.executeQuery();
+        while(result.next()){
+        int id = result.getInt("Id_Nota");
+        String usernameNota =  result.getString("Nombre_Usuario");
+        String descripcion = result.getString("Descripcion");
+        list.add(new Nota(id, usernameNota, descripcion));
+        }
+        }catch (Exception ex) {
+            System.out.println("Error" + ex);
+}
+return list;
+    
+    }
+
+ public static int cantidadTotal(String username) {
+        String qry = "SELECT COUNT(*) as Total  FROM nota WHERE Nombre_Usuario=? AND Eliminada=0;";
+        
+        try {
+Connection con = null;
+con = DbConnection.getConnection();
+            CallableStatement statement =  con.prepareCall(qry);
+statement.setString(1, username);
+ResultSet result = statement.executeQuery();
+             while(result.next()){
+        
+return result.getInt("Total");
+        }
+            
+        } catch (Exception ex) {
+            System.out.println("Error" + ex);
+        }
+        return 0;
+    }
+
+  
        
        
     
