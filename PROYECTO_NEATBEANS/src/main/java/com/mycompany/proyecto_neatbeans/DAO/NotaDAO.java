@@ -23,24 +23,29 @@ public class NotaDAO {
     Nota nota;
     
     
-       public static int insertNota(Nota nota) {
+       public static int insertNota(Nota nota) throws SQLException {
+              Connection con = null;
+              CallableStatement statement =  null;
     try{
-        Connection con = DbConnection.getConnection();
+         con = DbConnection.getConnection();
         String qry = "CALL sp_nota('Insert',NULL,?,?);";
-        CallableStatement statement =  con.prepareCall(qry);
+         statement =  con.prepareCall(qry);
         
         statement.setString(1, nota.getUserNota());
         statement.setString(2, nota.getDescripcion());
        
-        
         return statement.executeUpdate();
+       
         
         
         
     }
      catch(SQLException e){
         System.out.println(e.getMessage());
-        }
+        }finally{
+         
+            con.close();
+    }
     
     return 0;
     }

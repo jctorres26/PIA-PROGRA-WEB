@@ -9,6 +9,9 @@ import com.mycompany.proyecto_neatbeans.DAO.NotaDAO;
 import com.mycompany.proyecto_neatbeans.models.Nota;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,18 +42,21 @@ public class InsertNoteController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String descripcion =  request.getParameter("description");
-        String username =  request.getParameter("usernameNota");
-        
-        
-        Nota nota = new Nota(username, descripcion);
-        
-         if(NotaDAO.insertNota(nota)==1){
-       response.sendRedirect("dashboard.jsp");
-      }
-      else{
-      
-      }
+        try {
+            String descripcion =  request.getParameter("description");
+            String username =  request.getParameter("usernameNota");
+            
+            
+            Nota nota = new Nota(username, descripcion);
+            
+            if(NotaDAO.insertNota(nota)!=0){
+                response.sendRedirect("dashboard.jsp");
+            }
+            else{
+                
+            } } catch (SQLException ex) {
+            Logger.getLogger(InsertNoteController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
 
     }

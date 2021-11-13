@@ -10,8 +10,11 @@ import com.mycompany.proyecto_neatbeans.models.Nota;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,16 +32,20 @@ public class GetNotas extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-HashMap resultado = new HashMap();
-Nota nota = new Nota();
-String indice  = request.getParameter("indice");
-String cantidad  = request.getParameter("cantidad");
-List lista =  NotaDAO.listar( Integer.parseInt(indice) , Integer.parseInt(cantidad),(String) request.getSession().getAttribute("Username"));
-resultado.put("notas", lista);
-    String json = new Gson().toJson(resultado);
-     PrintWriter out = response.getWriter();
-     out.print(json);
-     out.flush();
+        try {
+            HashMap resultado = new HashMap();
+            Nota nota = new Nota();
+            String indice  = request.getParameter("indice");
+            String cantidad  = request.getParameter("cantidad");
+            List lista =  NotaDAO.listar( Integer.parseInt(indice) , Integer.parseInt(cantidad),(String) request.getSession().getAttribute("Username"));
+            resultado.put("notas", lista);
+            String json = new Gson().toJson(resultado);
+            PrintWriter out = response.getWriter();
+            out.print(json);
+            out.flush();
+        } catch (SQLException ex) {
+            Logger.getLogger(GetNotas.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
 
 
