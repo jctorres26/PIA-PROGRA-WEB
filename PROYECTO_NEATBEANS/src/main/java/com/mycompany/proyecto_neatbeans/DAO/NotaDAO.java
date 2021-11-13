@@ -200,12 +200,13 @@ public class NotaDAO {
    return 0;
     }
 
-public static List listar(int indice, int cantidad,String username){
+public static List listar(int indice, int cantidad,String username) throws SQLException{
             ArrayList<Nota> list = new ArrayList();
+            Connection con = null;
 try{
-Connection con = null;
+
 con = DbConnection.getConnection();
-        String qry = "SELECT * FROM nota WHERE Nombre_Usuario=? AND Eliminada=0 LIMIT ?,?;";
+        String qry = "SELECT * FROM nota WHERE Nombre_Usuario=? AND Eliminada=0 ORDER BY Fecha_Creacion DESC LIMIT ?,? ;";
         CallableStatement statement =  con.prepareCall(qry);
 statement.setString(1, username);
         statement.setInt(2, indice);
@@ -220,15 +221,18 @@ statement.setString(1, username);
         }catch (Exception ex) {
             System.out.println("Error" + ex);
 }
+finally{
+con.close();
+}
 return list;
     
     }
 
- public static int cantidadTotal(String username) {
+ public static int cantidadTotal(String username) throws SQLException {
         String qry = "SELECT COUNT(*) as Total  FROM nota WHERE Nombre_Usuario=? AND Eliminada=0;";
-        
+        Connection con = null;
         try {
-Connection con = null;
+
 con = DbConnection.getConnection();
             CallableStatement statement =  con.prepareCall(qry);
 statement.setString(1, username);
@@ -240,6 +244,9 @@ return result.getInt("Total");
             
         } catch (Exception ex) {
             System.out.println("Error" + ex);
+        }
+        finally{
+        con.close();
         }
         return 0;
     }

@@ -96,11 +96,13 @@ System.out.println(nota);
                     <!-- MENU1 --> 
                     <ul class="Info">
                         <li class="font-weight-bold text-uppercase">Contacto</li>
+                         <li >Contacto</li>
                         
                     </ul>
                     <!-- MENU2 --> 
                     <ul class="Catego">
                         <li class="font-weight-bold text-uppercase">Contacto</li>
+                         <li >Contacto</li>
                         
                     </ul>
                 </nav>
