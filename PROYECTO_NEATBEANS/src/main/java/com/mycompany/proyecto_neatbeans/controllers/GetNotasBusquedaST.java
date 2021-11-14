@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -25,29 +24,34 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ALEXANDRA
  */
-@WebServlet(name="GetNotas", urlPatterns={"/GetNotas"})
-public class GetNotas extends HttpServlet {
+@WebServlet(name="GetNotasBusquedaST", urlPatterns={"/GetNotasBusquedaST"})
+public class GetNotasBusquedaST extends HttpServlet {
    
-
+  
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        try {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException { 
+       try {String busqueda = request.getParameter("search");
             HashMap resultado = new HashMap();
             Nota nota = new Nota();
-            String indice  = request.getParameter("indice");
-            String cantidad  = request.getParameter("cantidad");
-            List lista =  NotaDAO.listar( Integer.parseInt(indice) , Integer.parseInt(cantidad),(String) request.getSession().getAttribute("Username"));
-            resultado.put("notas", lista);
+            int cantidad = NotaDAO.cantidadTotalS((String) request.getSession().getAttribute("Username"),(String) request.getSession().getAttribute("busquedaSimple"));
+            
+            if(cantidad > 0 ){
+                resultado.put("respuesta", true);
+            }else{
+                resultado.put("respuesta", false);
+            }
+            resultado.put("cantidad", cantidad);
+            
             String json = new Gson().toJson(resultado);
             PrintWriter out = response.getWriter();
             out.print(json);
             out.flush();
         } catch (SQLException ex) {
-            Logger.getLogger(GetNotas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GetNotasBusquedaST.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }
+    } 
 
- 
+  
 }

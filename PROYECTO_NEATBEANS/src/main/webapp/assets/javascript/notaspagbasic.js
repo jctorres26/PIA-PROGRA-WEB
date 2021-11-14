@@ -3,15 +3,12 @@ var cantidadMostrar = 10;
 var indiceposi = 0;
 var pages = 0;
 
-
-
-
 function cargarPaginacion( indice, cantidad){
         $.ajax({
             data: {indice: indice, cantidad: cantidad}, 
             type: "POST",
             dataType: "json",
-            url: "GetNotas"
+            url: "GetNotasBusquedaS"
         }).done(function(data, textEstado, jqXHR){
             console.log(data);
             var str = "";
@@ -33,7 +30,7 @@ function cargarPaginacion( indice, cantidad){
             async: false,
             type: "GET",
             dataType: "json",
-            url: "GetNotasTotal"
+            url: "GetNotasBusquedaST"
         }).done(function(data, textEstado, jqXHR){
             console.log(data);
             if(data.respuesta == true){
@@ -60,7 +57,7 @@ function cargarPaginacion( indice, cantidad){
         });
         
         
-$(document).ready(function(){
+ $(document).ready(function(){
 
     $(".indice").click(function(){
       $(".page-item").removeClass("active");

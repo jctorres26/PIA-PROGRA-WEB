@@ -68,21 +68,11 @@
                 
             </nav>
         </header>
-         <!-- BARRA DE BUSQUEDA AVANZADA 
-         <section class="Busqueda_avanzada">
-             <h4> Busqueda Avanzada </h4>
-             <input type="text" name="search" placeholder="Buscar nota" class="buscAv" autocomplete="off">
-             <h4> Rango de fechas </h4>
-             <input type="date" id="fecha1" name="fecha1" class="fechapick">
-             <input type="date" id="fecha2" name="fecha2" class="fechapick">
-            
-
-         </section>
-        -->
+       
         <!-- MAIN CLASS -->
         <main class="main">
            
-            
+            <!--
             <% for (Nota nota: notas){ %>
             
             <form class="containerDASHBOARD" action="EditNoteController?idNota=<%=nota.getIdNota()%>" method="POST" onclick="CHECAR">
@@ -102,8 +92,11 @@
            
                 <%}%>
             
-
-         
+-->
+         <div id="NOTAS">
+            </div>
+             <ul class="pagination" id="PAGINAS">
+            </ul>
             
         </main>
       
@@ -127,15 +120,8 @@
             </nav>
             </div>
             </footer>
-            
-
-        <script >
-            function CHECAR(){
-            <% String notaid="10";%>
-            <%session.setAttribute("NotaID",notaid);%> 
-    }
-        
-        </script>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="assets/javascript/notaspagbasic.js"></script>
     </body>
     
     

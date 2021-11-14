@@ -32,6 +32,7 @@ public class GetNotasTotal extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         try {
+String busqueda = request.getParameter("search");
             HashMap resultado = new HashMap();
             Nota nota = new Nota();
             int cantidad = NotaDAO.cantidadTotal((String) request.getSession().getAttribute("Username"));

@@ -25,29 +25,29 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ALEXANDRA
  */
-@WebServlet(name="GetNotas", urlPatterns={"/GetNotas"})
-public class GetNotas extends HttpServlet {
-   
-
+@WebServlet(name="GetNotasBusquedaS", urlPatterns={"/GetNotasBusquedaS"})
+public class GetNotasBusquedaS extends HttpServlet {
+  
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        try {
+
+   try {
             HashMap resultado = new HashMap();
             Nota nota = new Nota();
             String indice  = request.getParameter("indice");
             String cantidad  = request.getParameter("cantidad");
-            List lista =  NotaDAO.listar( Integer.parseInt(indice) , Integer.parseInt(cantidad),(String) request.getSession().getAttribute("Username"));
+            List lista =  NotaDAO.listarSEARCH( Integer.parseInt(indice) , Integer.parseInt(cantidad),(String) request.getSession().getAttribute("Username"),(String) request.getSession().getAttribute("busquedaSimple"));
             resultado.put("notas", lista);
             String json = new Gson().toJson(resultado);
             PrintWriter out = response.getWriter();
             out.print(json);
             out.flush();
         } catch (SQLException ex) {
-            Logger.getLogger(GetNotas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GetNotasBusquedaS.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
- 
+
 }

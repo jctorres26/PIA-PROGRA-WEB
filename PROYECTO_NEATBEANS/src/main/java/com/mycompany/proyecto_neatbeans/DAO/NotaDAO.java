@@ -233,6 +233,8 @@ return list;
     
     }
 
+
+
  public static int cantidadTotal(String username) throws SQLException {
         String qry = "SELECT COUNT(*) as Total  FROM nota WHERE Nombre_Usuario=? AND Eliminada=0;";
         Connection con = null;
@@ -242,6 +244,61 @@ con = DbConnection.getConnection();
             CallableStatement statement =  con.prepareCall(qry);
 statement.setString(1, username);
 ResultSet result = statement.executeQuery();
+             while(result.next()){
+        
+return result.getInt("Total");
+        }
+            
+        } catch (Exception ex) {
+            System.out.println("Error" + ex);
+        }
+        finally{
+        con.close();
+        }
+        return 0;
+    }
+
+
+public static List listarSEARCH(int indice, int cantidad,String username,String busqueda) throws SQLException{
+            ArrayList<Nota> list = new ArrayList();
+            Connection con = null;
+        try{
+
+        con = DbConnection.getConnection();
+        String qry = "SELECT Id_Nota, Descripcion, Nombre_Usuario FROM nota  WHERE Descripcion LIKE CONCAT('%',?,'%') AND Nombre_Usuario = ? AND Eliminada = 0 AND  Descripcion !=\"\"  ORDER BY Fecha_Creacion DESC LIMIT ?,?;";
+        CallableStatement statement =  con.prepareCall(qry);
+        statement.setString(1,busqueda);
+        statement.setString(2, username);
+        statement.setInt(3, indice);
+        statement.setInt(4, cantidad);
+        ResultSet result = statement.executeQuery();
+        while(result.next()){
+        int id = result.getInt("Id_Nota");
+        String usernameNota =  result.getString("Nombre_Usuario");
+        String descripcion = result.getString("Descripcion");
+        list.add(new Nota(id, usernameNota, descripcion));
+        }
+        }catch (Exception ex) {
+            System.out.println("Error" + ex);
+}
+finally{
+con.close();
+}
+return list;
+    
+    }
+
+public static int cantidadTotalS(String username,String busqueda) throws SQLException {
+        String qry = "SELECT COUNT(*) as Total  FROM nota WHERE WHERE Descripcion LIKE CONCAT('%',?,'%') AND Nombre_Usuario=? AND Eliminada=0 ORDER BY Fecha_Creacion;";
+        Connection con = null;
+        try {
+
+            con = DbConnection.getConnection();
+            CallableStatement statement =  con.prepareCall(qry);
+        statement.setString(1, busqueda);
+statement.setString(2, username);
+
+        ResultSet result = statement.executeQuery();
              while(result.next()){
         
 return result.getInt("Total");

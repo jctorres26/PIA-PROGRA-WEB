@@ -80,11 +80,8 @@ public class SimpleSearchController extends HttpServlet {
         String username =  request.getParameter("username");
         String busqueda = request.getParameter("search");
         
-        List <Nota> notas = NotaDAO.getNotasByBusquedaSimple(username, busqueda);
-        
         HttpSession session = request.getSession(true);
-        session.setAttribute("busquedaSimple", notas);
-       
+        session.setAttribute("busquedaSimple", busqueda);
          response.sendRedirect("resultados_busqueda.jsp");
         
     }
