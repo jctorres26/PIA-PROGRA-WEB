@@ -109,7 +109,7 @@
                         <label for="fecha">Fecha Nacimiento</label>
                     </div>
                     <div class="col-75">
-                        <input class="fechita" type="date" min='1900-01-01' max = '2000-01-01' value='<%=session.getAttribute("FechaNac")%>' id="fecha" name="fecha" value="" >
+                        <input class="fechita" type="date" min='1900-01-01' max = '2000-01-01' value='<%=session.getAttribute("FechaNac")%>' id="fecha_nacimiento" name="fecha" value="" >
                     </div>
                 </div>
                   <!-- EDAD -->

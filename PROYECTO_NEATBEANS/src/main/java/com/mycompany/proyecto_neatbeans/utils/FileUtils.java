@@ -17,7 +17,7 @@ public class FileUtils {
     switch(contentType){
         case "image/png":
             return ".png";
-          case "image/jpg":
+          case "image/jpeg":
             return ".jpg";
                   case "video/mp4":
             return ".mp4";

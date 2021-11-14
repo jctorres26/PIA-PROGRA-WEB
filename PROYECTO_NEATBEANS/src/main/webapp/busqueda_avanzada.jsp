@@ -57,17 +57,17 @@
         
         <section class="busqueda_nota">
                 <h3>Busqueda Avanzada</h3>
-                <form  name="busquedaAv" action="" method="POST"  > 
+                <form  name="busquedaAv" action="AdvancedSearchController?username=<%= session.getAttribute("Username")%>" method="POST"  > 
                     <div class="busquedaN">
-               <input type="text" id="Busqueda_contenido" name="Busqueda_contenido" placeholder="Contenido de la nota" class="contenido_nota" >
+               <input type="text" id="Busqueda_contenido" name="search" placeholder="Contenido de la nota" class="contenido_nota" required>
                     </div>
                     <h4>Fechas </h4>
                <div class="inputsav" >
                    <p style="align-self: center">Desde:</p>
-                <input type="date" id="fecha1"  name="fecha1" class="inputs_diseño"  >
+                <input type="date" id="fecha1"  name="fecha1" value="2000-01-01" class="inputs_diseño"  >
                 
                 <p style="align-self: center">Hasta:</p>
-                <input type="date" id="fecha2"  name="fecha2" class="inputs_diseño" >
+                <input type="date" id="fecha2"  name="fecha2" value="2022-01-01" class="inputs_diseño" >
                 <br>
                </div>
                 <!-- CONTENEDOR DE TAGS -->

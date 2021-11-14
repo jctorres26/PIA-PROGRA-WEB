@@ -115,6 +115,42 @@ public class NotaDAO {
        return null;
        }
        
+        public static List<Nota> getNotasByBusquedaAvanzada (String username, String busqueda, String fecha1, String fecha2){
+           
+         
+        try{
+            List<Nota> notas = new ArrayList<>();
+            Connection con = DbConnection.getConnection();
+         
+        
+        String qry = "CALL sp_busqueda_avanzada(?,?,?,?);";
+        CallableStatement statement =  con.prepareCall(qry);
+        statement.setString(1,busqueda);
+       statement.setString(2,username);
+       statement.setString(3,fecha1);
+       statement.setString(4,fecha2);
+       
+       
+       ResultSet result = statement.executeQuery();
+        while(result.next()){
+        int id = result.getInt("Id_Nota");
+        String usernameNota =  result.getString("Nombre_Usuario");
+        String descripcion = result.getString("Descripcion");
+        notas.add(new Nota(id, usernameNota, descripcion));
+        
+        }
+        result.close();
+        statement.close();
+       con.close();
+        return notas;
+            
+    }
+     catch(SQLException e){
+        System.out.println(e.getMessage());
+        }
+       return null;
+       }
+       
        
        
        
@@ -289,7 +325,7 @@ return list;
     }
 
 public static int cantidadTotalS(String username,String busqueda) throws SQLException {
-        String qry = "SELECT COUNT(*) as Total  FROM nota WHERE WHERE Descripcion LIKE CONCAT('%',?,'%') AND Nombre_Usuario=? AND Eliminada=0 ORDER BY Fecha_Creacion;";
+        String qry = "SELECT COUNT(*) as Total  FROM nota WHERE Descripcion LIKE CONCAT('%',?,'%') AND Nombre_Usuario=? AND Eliminada=0 ORDER BY Fecha_Creacion;";
         Connection con = null;
         try {
 

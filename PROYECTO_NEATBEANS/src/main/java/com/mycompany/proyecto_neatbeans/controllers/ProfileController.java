@@ -82,12 +82,14 @@ public class ProfileController extends HttpServlet {
     throws ServletException, IOException {
         
    try {
+       int result;
             String username = request.getParameter("usuario");
             String nombre = request.getParameter("Nombre");
             String apellido = request.getParameter("Apellido");
             String fechaNac = request.getParameter("fecha");
             String correo = request.getParameter("correo");
             String password = request.getParameter("contra");
+            String img = request.getParameter("fotografia");
            
              String path = request.getServletContext().getRealPath("");   
         File fileSaveDir = new File(path + FileUtils.RUTE_USER_IMAGE);
@@ -102,12 +104,30 @@ public class ProfileController extends HttpServlet {
        String fullPath = path + FileUtils.RUTE_USER_IMAGE + "/" + nameImage;
        file.write(fullPath);
        
-   User user =  new User(username, nombre,apellido,fechaNac,correo,FileUtils.RUTE_USER_IMAGE + "/" + nameImage  ,password);
+       if(nameImage.contains(".ext")){
+           HttpSession session = request.getSession(true);
+         User user =  new User(username, nombre,apellido,fechaNac,correo,session.getAttribute("ImagenPerfil").toString(),password);
             
-            int result = UserDAO.updateUsuario(user);
+             result = UserDAO.updateUsuario(user);
+             if(result!= 0){
+                 
+                 session.setAttribute("Username", username);
+                
+        session.setAttribute("Nombre", nombre);
+        session.setAttribute("Apellido", apellido);
+        session.setAttribute("FechaNac", fechaNac);
+        session.setAttribute("Correo", correo);
+        session.setAttribute("Contra", password);
+        
+        
+                response.sendRedirect("perfil.jsp");
+            }
 
+   }else{
+        User user =  new User(username, nombre,apellido,fechaNac,correo,FileUtils.RUTE_USER_IMAGE + "/" + nameImage  ,password);
             
-            if(result!= 0){
+             result = UserDAO.updateUsuario(user);
+             if(result!= 0){
                  HttpSession session = request.getSession(true);
                  session.setAttribute("Username", username);
                 
@@ -120,6 +140,9 @@ public class ProfileController extends HttpServlet {
         
                 response.sendRedirect("perfil.jsp");
             }
+       
+       }
+            
         } catch (SQLException ex) {
             Logger.getLogger(ProfileController.class.getName()).log(Level.SEVERE, null, ex);
         }

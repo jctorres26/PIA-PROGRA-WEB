@@ -10,9 +10,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
  
- session = request.getSession(true);
+ session = request.getSession();
  
- 
+ List <Nota> notas =  (List<Nota>)session.getAttribute("busquedaAvanzada");
 
  %>
 
@@ -68,16 +68,31 @@
                 
             </nav>
         </header>
-       
-        <!-- MAIN CLASS -->
+        
         <main class="main">
-  
+           
+            
+            <% for (Nota nota: notas){ %>
+            
+            <form class="containerDASHBOARD" action="EditNoteController?idNota=<%=nota.getIdNota()%>" method="POST" onclick="CHECAR">
+                    <h4>¡Notebank!</h4>
+                    <input type="hidden" name="idNota" value="<%=nota.getIdNota()%>">
+                    <p>
+                        <%=nota.getDescripcion()
+                        
+                        %>
+                        
+                    </p>
+                    
+                        
+                   
+                    <input type="submit" value="...">
+                </form>
+           
+                <%}%>
             
 
-         <div id="NOTAS">
-            </div>
-             <ul class="pagination" id="PAGINAS">
-            </ul>
+         
             
         </main>
       
@@ -101,8 +116,9 @@
             </nav>
             </div>
             </footer>
-          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="assets/javascript/notaspagbasic.js"></script>
+            
+
+      
     </body>
     
     
