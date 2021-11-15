@@ -70,11 +70,7 @@ System.out.println(nota);
 
                   <%= nota.getDescripcion() %>
                 </textarea>
-                <!-- CONTENEDOR DE TAGS -->
-                <h4><%=notaid%></h4>
-                <div class="tag-container">
-                    <input/>
-                </div>
+                
                 <div class="botones">
                     <input type="hidden" name ="id" value="<%= nota.getIdNota() %>">
                     <input class="boton" id="btnenviar" type="submit" value="Guardar">

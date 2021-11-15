@@ -71,11 +71,7 @@
                 </textarea>
                 <input type="hidden" name="usernameNota" value="<%=session.getAttribute("Username")  %>">
                 <!-- CONTENEDOR DE TAGS -->
-                <h4>Etiquetas</h4>
-                <div class="tag-container">
-
-                    <input type="text" name ="etiquetas" />
-                </div>
+                
 
                 <input class="boton" id="btnenviar" type="submit" value="Crear nota">
                  
@@ -92,13 +88,13 @@
                 </a>
                  <!-- MENU1 --> 
                  <ul class="Info">
-                     <li class="font-weight-bold text-uppercase">Contacto</li>
-                     <li >Contacto</li>
+                     <li class="font-weight-bold text-uppercase">Alexandra Stephanie Flores Reynoso</li>
+                     <li >1841591</li>
                  </ul>
                   <!-- MENU2 --> 
                   <ul class="Catego">
-                    <li class="font-weight-bold text-uppercase">Contacto</li>
-                    <li >Contacto</li>
+                    <li class="font-weight-bold text-uppercase">José Carlos Torres Coronado</li>
+                    <li >1803586</li>
                 </ul>
             </nav>
             </div>

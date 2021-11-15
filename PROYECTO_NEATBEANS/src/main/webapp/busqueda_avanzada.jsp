@@ -70,11 +70,7 @@
                 <input type="date" id="fecha2"  name="fecha2" value="2022-01-01" class="inputs_diseño" >
                 <br>
                </div>
-                <!-- CONTENEDOR DE TAGS -->
-                <h4>Etiquetas</h4>
-                <div class="tag-container">
-                    <input/>
-                </div>
+               
 
                 <input class="boton" id="btnenviar" type="submit" value="Buscar notas">
                  
@@ -93,13 +89,13 @@
                     </a>
                     <!-- MENU1 --> 
                     <ul class="Info">
-                        <li class="font-weight-bold text-uppercase">Contacto</li>
-                         <li >Contacto</li>
+                        <li class="font-weight-bold text-uppercase">Alexandra Stephanie Flores Reynoso</li>
+                     <li >1841591</li>
                     </ul>
                     <!-- MENU2 --> 
                     <ul class="Catego">
-                        <li class="font-weight-bold text-uppercase">Contacto</li>
-                           <li >Contacto</li>
+                        <li class="font-weight-bold text-uppercase">José Carlos Torres Coronado</li>
+                    <li >1803586</li>
                     </ul>
                 </nav>
             </div>
