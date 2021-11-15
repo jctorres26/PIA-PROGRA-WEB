@@ -17,7 +17,7 @@ function cargarPaginacion( indice, cantidad){
             var str = "";
             
             data.notas.forEach( function(valor, indice) {
-                str+='<form class="containerDASHBOARD" action="EditNoteController?idNota='+valor.idNota+'" method="POST"> <h4>¡Notebank!</h4> <input type="hidden" name="idNota" value="'+valor.idNota+'"> <p>'+valor.descripcion+' </p> <input type="submit" value="..."> </form>';
+                str+='<form class="containerDASHBOARD" action="EditNoteController?idNota='+valor.idNota+' " method="POST"> <h4>¡Notebank!</h4> <input type="hidden" name="idNota" value="'+valor.idNota+'"> <p>'+valor.descripcion+' </p> <input type="submit" value="..."> </form>';
                    
 });
             

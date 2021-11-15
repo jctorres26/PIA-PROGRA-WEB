@@ -19,9 +19,10 @@ import java.sql.CallableStatement;
  */
 public class UserDAO {
     
-    public static int insertUser(User user) {
+    public static int insertUser(User user) throws SQLException {
+        Connection con = null;
     try{
-        Connection con = DbConnection.getConnection();
+         con = DbConnection.getConnection();
         String qry = "CALL sp_usuario('Insert',?,?,?,?,?,?,?);";
         CallableStatement statement =  con.prepareCall(qry);
         
@@ -40,15 +41,18 @@ public class UserDAO {
     }
      catch(SQLException e){
         System.out.println(e.getMessage());
-        }
+        }finally{
+    
+    con.close();}
     
     return 0;
     }
     
     
-    public static User logInUser(User user){
+    public static User logInUser(User user) throws SQLException{
+         Connection con = null;
         try{
-        Connection con = DbConnection.getConnection();
+         con = DbConnection.getConnection();
         String sql = "call sp_usuario('LoginUsuario',?,NULL,NULL,NULL,NULL,NULL,?);";
         CallableStatement statement = con.prepareCall(sql);
         
@@ -69,12 +73,15 @@ public class UserDAO {
             return new User(username, nombre, apellido, fechaNac, correo, imgPerfil,contra);
         
         }
+       
         
        
         
         }catch(SQLException e){
         System.out.println(e.getMessage());
-        }
+        }finally{
+            con.close();
+    }
         
         return null;
     

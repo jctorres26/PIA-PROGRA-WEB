@@ -35,7 +35,7 @@
             <section class="login_usuario">
                 <h3>Iniciar sesion en NoteBank</h3>
                 <h4>¡Bienvenido!</h4>
-                <form class="form-login" action="LogInController" method="POST" onsubmit="return validar();" >
+                <form class="form-login"   id="MyForm">
                 <input class="controls" type="text" name="usuario_login" id="usuario_login" placeholder="Nombre de usuario" ><!-- comment -->
                 <div id="mensajeusuarioFALTA" class="errores">Favor de ingresar usuario</div>
                 <div id="mensajeusuarioLONGITUD" class="errores">Se necesita min 3 y max 20 caractes</div>
@@ -43,12 +43,12 @@
                 
                 <br>
                 <br>
-                <input class="controls" type="password" name="contrasenia_login" id="contraseña_login" placeholder="Contraseña" >
+                <input class="controls" type="password" name="contrasenia_login" id="contrasenia_login" placeholder="Contraseña" >
                  <div id="mensajecontraseñaFALTA" class="errores">Favor de ingresar contraseña</div>
                   <div id="mensajecontraseñaLONGITUD" class="errores">La contraseña debe de tener 8 caracteres</div>
                    <div id="mensajecontraseñaTIPO" class="errores">Caracteres no validos</div>
                
-                <input class="boton" id="btnenviar" type="submit" value="Ingresar">
+                <input class="boton" id="btnenviar" type="button" value="Ingresar">
                 </form>
                 <p>
                     ¿No estas registrado aun?
@@ -85,52 +85,51 @@
         $(document).ready(function() {
     $("#btnenviar").click(function () {
         var usuario = $("#usuario_login").val();
-        var contraseña = $("#contraseña_login").val();
+        var contrasenia = $("#contrasenia_login").val();
         var expresion= /^[a-zA-Z0-9\_\-]{4,16}$/;
         
        
              
           if(usuario === ""){
             $("#mensajeusuarioFALTA").fadeIn();
-            $("#mensajeusuarioTIPO").fadeOut();
-             
+          
           }else{
               
               $("#mensajeusuarioFALTA").fadeOut();
-              $("#mensajeusuarioTIPO").fadeOut();
-               if (usuario.length>21 || usuario.length<4){
-              $("#mensajeusuarioLONGITUD").fadeIn();
-              
-          }else{
-              $("#mensajeusuarioLONGITUD").fadeOut();
-              if (!expresion.test(usuario)){
-                  $("#mensajeusuarioTIPO").fadeIn();
-              }
-              
-          }
             
           }
-          if (contraseña===""){
+          
+          if (contrasenia===""){
               $("#mensajecontraseñaFALTA").fadeIn();
-              $("#mensajecontraseñaTIPO").fadeOut();
+            
              
           }else{
               $("#mensajecontraseñaFALTA").fadeOut();
-              $("#mensajecontraseñaTIPO").fadeOut();
-              if(contraseña.length !== 8){
-                  $("#mensajecontraseñaLONGITUD").fadeIn();
-              }else{
-                  $("#mensajecontraseñaLONGITUD").fadeOut();
-                  if (!expresion.test(contraseña)){
-                  $("#mensajecontraseñaTIPO").fadeIn();
-              }
-              }
+             
           }
+            
+              
+          if(usuario !="" && contrasenia !=""){
           
-          
-             
-             
-        
+      
+             $.ajax({
+           async    :  true,
+           type     : "POST",
+           data: {usuario_login: usuario, contrasenia_login: contrasenia},
+            dataType: "json",
+           url      : "LogInController",
+           success: function(data) {
+               
+                if(data.exist == false){
+           alert("Usuario o contraseña incorrecta");
+            
+       }else if(data.exist==true){
+          window.location='dashboard.jsp'
+           
+       }
+        }
+});
+    }
         
          
         

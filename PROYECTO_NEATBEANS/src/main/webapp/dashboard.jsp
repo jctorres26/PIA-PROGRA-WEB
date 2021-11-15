@@ -60,7 +60,7 @@ System.out.println(notas);
                         </ul>
                     </li>
                     
-                    <li class="nav_barra_item"> <a href="perfil.jsp" class="nav_barra_link"> <img src= "<%= session.getAttribute("ImagenPerfil") %>" width="100" height="90" align="left">Perfil de usuario </a> </li>
+                    <li class="nav_barra_item"> <a href="perfil.jsp" class="nav_barra_link"> <img src= "<%= session.getAttribute("ImagenPerfil") %>" width="100" height="90" align="left"><%= session.getAttribute("Username")%> </a> </li>
                     <li class="nav_barra_item"> <a href="LogOffController" class="nav_barra_link"> LOG OUT </a> </li>
                    
                    
@@ -93,6 +93,8 @@ System.out.println(notas);
                 
                  <div id="NOTAS">
             </div>
+                
+                
              <ul class="pagination" id="PAGINAS">
             </ul>
 
