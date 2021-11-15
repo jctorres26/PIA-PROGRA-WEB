@@ -16,6 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.mycompany.proyecto_neatbeans.models.User;
 import com.mycompany.proyecto_neatbeans.utils.FileUtils;
 import java.io.File;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.Part;
 
@@ -43,34 +46,37 @@ public class SignUpController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String nombre = request.getParameter("Nombre");
-         String apellido = request.getParameter("Apellido");
-          String correo = request.getParameter("Correo");
-         String usuario = request.getParameter("Usuario");
-         String contra = request.getParameter("Contrasenia");
-         String fechaNac = request.getParameter("fechadenacimiento");
-         
-         String path = request.getServletContext().getRealPath("");   
-        File fileSaveDir = new File(path + FileUtils.RUTE_USER_IMAGE);
-        
-        if(!fileSaveDir.exists()){
-            fileSaveDir.mkdir();
+        try {
+            String nombre = request.getParameter("Nombre");
+            String apellido = request.getParameter("Apellido");
+            String correo = request.getParameter("Correo");
+            String usuario = request.getParameter("Usuario");
+            String contra = request.getParameter("Contrasenia");
+            String fechaNac = request.getParameter("fechadenacimiento");
+            
+            String path = request.getServletContext().getRealPath("");
+            File fileSaveDir = new File(path + FileUtils.RUTE_USER_IMAGE);
+            
+            if(!fileSaveDir.exists()){
+                fileSaveDir.mkdir();
+            }
+            
+            Part file = request.getPart("Fotografia");
+            String contentType = file.getContentType();
+            String nameImage = file.getName() + System.currentTimeMillis() + FileUtils.GetExtension(contentType);
+            String fullPath = path + FileUtils.RUTE_USER_IMAGE + "/" + nameImage;
+            file.write(fullPath);
+            
+            User user =  new User(usuario, nombre, apellido, fechaNac, correo,  FileUtils.RUTE_USER_IMAGE + "/" + nameImage, contra);
+            
+            if(UserDAO.insertUser(user)==1){
+                response.sendRedirect("index.jsp");
+            }
+            else{
+                
+            } } catch (SQLException ex) {
+            Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        Part file = request.getPart("Fotografia");
-        String contentType = file.getContentType();
-      String nameImage = file.getName() + System.currentTimeMillis() + FileUtils.GetExtension(contentType);
-       String fullPath = path + FileUtils.RUTE_USER_IMAGE + "/" + nameImage;
-       file.write(fullPath);
-  
-      User user =  new User(usuario, nombre, apellido, fechaNac, correo,  FileUtils.RUTE_USER_IMAGE + "/" + nameImage, contra);
-      
-      if(UserDAO.insertUser(user)==1){
-      response.sendRedirect("index.jsp");
-      }
-      else{
-      
-      }
        
     }
 
