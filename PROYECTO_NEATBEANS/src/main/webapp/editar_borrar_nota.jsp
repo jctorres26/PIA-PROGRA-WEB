@@ -66,10 +66,7 @@ System.out.println(nota);
         <main class="main">
             <section class="creacion_nota">
                 <form  action="UpdateNoteController" method="POST"  > 
-                <textarea class="controls" rows = "1" cols = "10" name = "description" id="description">
-
-                  <%= nota.getDescripcion() %>
-                </textarea>
+                <textarea class="controls" rows = "1" cols = "10" name = "description" id="description"><%= nota.getDescripcion() %></textarea>
                 
                 <div class="botones">
                     <input type="hidden" name ="id" value="<%= nota.getIdNota() %>">

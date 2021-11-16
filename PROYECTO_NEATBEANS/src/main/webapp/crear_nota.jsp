@@ -67,8 +67,7 @@
                 <h3>Crea tu nota de Notebank</h3>
                 <form  name="formulario" action="InsertNoteController" method="POST" onsubmit="return validar();" > 
                 <!--<input class="controls" type="text" name="nota" id="nota" > -->
-                <textarea class="controls" rows = "1" cols = "10" name = "description" id="description">
-                </textarea>
+                <textarea class="controls" rows = "1" cols = "10" name = "description" id="description"></textarea>
                 <input type="hidden" name="usernameNota" value="<%=session.getAttribute("Username")  %>">
                 <!-- CONTENEDOR DE TAGS -->
                 
