@@ -4,6 +4,7 @@ function validar(){
         var spaces = /^\S*$/;
         var spacesName = /\s\s/;
         var email = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+          var expPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$#!%*?&])[A-Za-z\d@$#!%*?&]{8,}$/;
 
           var nombreTxt = document.getElementById('Nombre').value; 
           var apellidoTxt = document.getElementById('Apellido').value;
@@ -23,11 +24,11 @@ function validar(){
          else if(!(usuarioTxt.match(spaces))){
               return false;
           }
-          else if( $("#contra").val().length<8){
+          else if( !(contraTxt.match(expPassword))){
             return false;
 
           }
-          else if(contraTxt!=confContraTxt){
+          else if(contraTxt!==confContraTxt){
               return false;
           }
          else if( !(emailTxt.match(email))){

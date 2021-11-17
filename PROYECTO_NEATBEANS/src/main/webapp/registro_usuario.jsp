@@ -133,6 +133,7 @@ document.getElementById("fecha_nacimiento").setAttribute("max", today);
        var spaces = /^\S*$/;
         var spacesName = /\s\s/;
         var email = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+        var expPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$#!%*?&])[A-Za-z\d@$#!%*?&]{8,}$/;
 
           var nombreTxt = document.getElementById('Nombre').value; 
           var apellidoTxt = document.getElementById('Apellido').value;
@@ -162,7 +163,7 @@ if(!(usuarioTxt.match(spaces)) || usuarioTxt === ""){
   $("#mensaje3").fadeOut();
 }
 
-if( $("#contra").val().length<8){
+if( !(contraTxt.match(expPassword))){
     $("#mensaje4").css("margin-top",406);
   $("#mensaje4").fadeIn();
 }else{
